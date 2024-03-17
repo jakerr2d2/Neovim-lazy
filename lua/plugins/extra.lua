@@ -28,12 +28,15 @@ return {
     end
   },
   -- TODO: add oil nvim
-  {
+  --[[{
     'stevearc/oil.nvim',
+    event = "VeryLazy",
     config = function()
       require('oil').setup()
     end,
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  }
+  }},]]
+
+
 }
