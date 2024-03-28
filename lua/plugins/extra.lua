@@ -2,11 +2,11 @@ return {
 
   --TODO: add codeium
   {
-    'Exafunction/codeium.vim',
-    event = 'BufEnter',
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
     config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-g>", function()
+      vim.keymap.set("i", "<C-j>", function()
         return vim.fn["codeium#Accept"]()
       end, { expr = true, silent = true })
       vim.keymap.set("i", "<c-;>", function()
@@ -24,8 +24,8 @@ return {
   {
     "karb94/neoscroll.nvim",
     config = function()
-      require('neoscroll').setup {}
-    end
+      require("neoscroll").setup({})
+    end,
   },
   -- TODO: add oil nvim
   --[[{
@@ -37,6 +37,4 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   }},]]
-
-
 }
