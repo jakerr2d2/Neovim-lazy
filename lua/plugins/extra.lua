@@ -1,7 +1,21 @@
 return {
-
-  --TODO: add codeium
+  --TODO: add code_runner
   {
+    "CRAG666/code_runner.nvim",
+    config = function()
+      require("/complements/coderunner")
+    end,
+  },
+  {
+    -- NOTE: Hermoso efecto de lluvia de objetos en Neovim
+    "folke/drop.nvim",
+    event = "VimEnter",
+    config = function()
+      require("drop").setup({ theme = "leaves", filetypes = { "Dashboard" } })
+    end,
+  },
+  {
+    --TODO: add codeium
     "Exafunction/codeium.vim",
     event = "BufEnter",
     config = function()
@@ -20,21 +34,4 @@ return {
       end, { expr = true, silent = true })
     end,
   },
-  -- TODO: add neoscroll
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup({})
-    end,
-  },
-  -- TODO: add oil nvim
-  --[[{
-    'stevearc/oil.nvim',
-    event = "VeryLazy",
-    config = function()
-      require('oil').setup()
-    end,
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  }},]]
 }
