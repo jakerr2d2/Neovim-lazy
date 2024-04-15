@@ -7,9 +7,9 @@ return {
       transparent_background = true,
       integrations = {
         aerial = true,
-        alpha = true,
         cmp = true,
         dashboard = true,
+        fidget = true,
         flash = true,
         gitsigns = true,
         headlines = true,
@@ -52,5 +52,5 @@ return {
     opts = {
       colorscheme = "catppuccin",
     },
-  }
+  },
 }
