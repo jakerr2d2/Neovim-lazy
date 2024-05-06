@@ -17,8 +17,8 @@ map("n", "<leader>qe", "<cmd>q<cr>", { desc = "Quit" })
 --TODO:  Add tabs
 map("n", "<leader><tab>p", "<cmd>BufferLinePick<cr>", { desc = "Pick Tab" })
 map("n", "<leader><tab>q", "<cmd>BufferLinePickClose<cr>", { desc = "Pick Close Tab" })
-map("n", "<leader><tab>j", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Tab" })
-map("n", "<leader><tab>k", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Tab" })
+map("n", "<leader><tab>k", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Tab" })
+map("n", "<leader><tab>j", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Tab" })
 map("n", "<leader><tab>l", "<cmd>BufferLineMoveNext<cr>", { desc = "Move Next Tab" })
 map("n", "<leader><tab>h", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Prev Tab" })
 
@@ -27,13 +27,13 @@ map("n", "<leader>gN", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Neogit (cwd) " })
 map("n", "<leader>gn", "<cmd>Neogit<cr>", { desc = "Neogit (root dir) " })
 
 --TODO:  Add Code Runner
-map("n", "<leader>cpr", ":RunCode<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpf", ":RunFile<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpt", ":RunFile tab<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpp", ":RunProject<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpc", ":RunClose<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpy", ":CRFiletype<CR>", { noremap = true, silent = false })
-map("n", "<leader>cpj", ":CRProjects<CR>", { noremap = true, silent = false })
+map("n", "<leader>tU", ":RunCode<CR>", { noremap = true, silent = false })
+map("n", "<leader>tu", ":RunFile<CR>", { noremap = true, silent = false })
+map("n", "<leader>tv", ":RunFile tab<CR>", { noremap = true, silent = false })
+map("n", "<leader>tV", ":RunProject<CR>", { noremap = true, silent = false })
+map("n", "<leader>tw", ":RunClose<CR>", { noremap = true, silent = false })
+map("n", "<leader>tW", ":CRFiletype<CR>", { noremap = true, silent = false })
+map("n", "<leader>tx", ":CRProjects<CR>", { noremap = true, silent = false })
 
 -- TODO: Add Maximize
 map("n", "<leader>wz", "<cmd>WindowsMaximize<cr>", { desc = "Maximizw window" })
@@ -43,3 +43,15 @@ map("n", "<leader>we", "<cmd>WindowsEqualize<cr>", { desc = "Equalize windows" }
 
 -- TODO: Add Organizate Windows
 map("n", "<leader>wo", "<cmd>WinShift<cr>", { desc = "Organizate window" })
+
+-- TODO: Add Harpoon
+local harpoon = require("harpoon")
+
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>H", function()
+  harpoon:list():add()
+end, { desc = "Harpoon File" })
+
+-- TODO: Add Ray
+map("v", "<leader>ct", "<cmd>Ray<cr>", { desc = "Snap Code" })
