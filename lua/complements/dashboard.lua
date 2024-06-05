@@ -53,7 +53,7 @@ require("dashboard").setup({
     footer = {
       "  ",
       "  ",
-      '"Tu futuro aún no ha sido escrito. Nadie lo ha hecho. Tu futuro es lo que hagas. ¡Así que hazlo bueno!"',
+      '"Tu futuro aún no ha sido escrito. Nadie lo ha hecho. Tu futuro es lo que hagas. ¡Así que hazlo bueno!s"',
       "DOC BROWN",
     },
   },

@@ -1,8 +1,8 @@
--- Obtener la ruta de Python3 desde Neovim
+--[[Obtener la ruta de Python3 desde Neovim
 local python3_path = vim.fn.systemlist("which python3")[1]
 vim.g.python3_host_prog = python3_path
 
--- NOTE: Cargar el complemento nvim-dap
+ NOTE: Cargar el complemento nvim-dap
 local dap = require("dap")
 
 -- NOTE: local ruta = "/home/bushido/.cache/pypoetry/virtualenvs/invasores-sK6nis5H-py3.11/bin/python3"
@@ -59,4 +59,5 @@ dap.configurations.python = {
       return vim.split(args_string, " +")
     end,
   },
-}
+}]]
+--

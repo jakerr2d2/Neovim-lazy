@@ -3,4 +3,4 @@ require("config.lazy")
 
 -- NOTE: add some plugins
 require("complements.dashboard")
-require("complements.dap")
+require("complements.format")

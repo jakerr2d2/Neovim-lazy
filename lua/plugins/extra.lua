@@ -1,6 +1,6 @@
 return {
-  --TODO: add code_runner
   {
+    --TODO: add code_runner
     "CRAG666/code_runner.nvim",
     config = function()
       require("/complements/coderunner")
@@ -35,6 +35,7 @@ return {
     end,
   },
   {
+    --TODO: add autosave
     "0x00-ketsu/autosave.nvim",
     -- lazy-loading on events
     event = { "InsertLeave", "TextChanged" },
@@ -42,5 +43,9 @@ return {
       require("autosave").setup({})
     end,
   },
-  { "sudoerwx/vim-ray-so-beautiful", event = "VeryLazy" },
+  {
+    --TODO: add ray
+    "sudoerwx/vim-ray-so-beautiful",
+    event = "VeryLazy",
+  },
 }

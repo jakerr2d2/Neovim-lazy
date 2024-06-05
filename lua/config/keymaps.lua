@@ -44,14 +44,17 @@ map("n", "<leader>we", "<cmd>WindowsEqualize<cr>", { desc = "Equalize windows" }
 -- TODO: Add Organizate Windows
 map("n", "<leader>wo", "<cmd>WinShift<cr>", { desc = "Organizate window" })
 
--- TODO: Add Harpoon
+--[[ TODO: Add Harpoon
 local harpoon = require("harpoon")
-
 harpoon:setup()
-
 vim.keymap.set("n", "<leader>H", function()
   harpoon:list():add()
-end, { desc = "Harpoon File" })
+end, { desc = "Harpoon File" })]]
 
 -- TODO: Add Ray
 map("v", "<leader>ct", "<cmd>Ray<cr>", { desc = "Snap Code" })
+
+-- TODO: Add LiveServer
+map("n", "<leader>cp", "<cmd>LiveServerStart<cr>", { desc = "Liveserver start" })
+map("n", "<leader>cQ", "<cmd>LiveServerStop<cr>", { desc = "LiveServer Stop" })
+map("n", "<leader>cq", "<cmd>LiveServerToggle<cr>", { desc = "LiveServer Toggle" })
