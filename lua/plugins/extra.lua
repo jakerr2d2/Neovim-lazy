@@ -28,4 +28,8 @@ return {
     "sudoerwx/vim-ray-so-beautiful",
     event = "VeryLazy",
   },
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  },
 }
