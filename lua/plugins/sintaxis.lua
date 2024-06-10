@@ -25,4 +25,8 @@ return {
       require("live-server-nvim").setup({})
     end,
   },
+  {
+    --TODO: Mayusculas en SQL
+    "jsborjesson/vim-uppercase-sql",
+  },
 }

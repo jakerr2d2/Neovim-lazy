@@ -5,5 +5,6 @@
 --TODO: Python options
 local python3_path = vim.fn.systemlist("which python3")[1]
 --vim.g.python3_host_prog = python3_path
-vim.g.python3_host_prog = "/usr/bin/python3"
+--vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python3_host_prog = vim.fn.system("poetry env info --path"):gsub("\n", "") .. "/bin/python"
 vim.g.lazyvim_python_lsp = "pyright"

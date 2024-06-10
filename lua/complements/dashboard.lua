@@ -24,6 +24,12 @@ require("dashboard").setup({
         key = "l",
       },
       {
+        desc = " Lazy Extra",
+        group = "DiagnosticHint",
+        action = "LazyExtras",
+        key = "j",
+      },
+      {
         desc = "󰊢 Git ",
         group = "Number",
         action = "Neogit cwd=%:p:h",
