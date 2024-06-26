@@ -1,6 +1,6 @@
 return {
   {
-    --TODO: add code_runner
+    -- TODO: add code_runner
     "CRAG666/code_runner.nvim",
     config = function()
       require("/complements/coderunner")
@@ -11,11 +11,11 @@ return {
     "folke/drop.nvim",
     event = "VimEnter",
     config = function()
-      require("drop").setup({ theme = "leaves", filetypes = { "Dashboard" } })
+      require("drop").setup({ theme = "snow", filetypes = { "Dashboard" } })
     end,
   },
   {
-    --TODO: add autosave
+    -- TODO: add autosave
     "0x00-ketsu/autosave.nvim",
     -- lazy-loading on events
     event = { "InsertLeave", "TextChanged" },
@@ -24,12 +24,29 @@ return {
     end,
   },
   {
-    --TODO: add ray
+    -- TODO: add ray
     "sudoerwx/vim-ray-so-beautiful",
     event = "VeryLazy",
   },
   {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
+    -- TODO: Mayusculas en SQL
+    "jsborjesson/vim-uppercase-sql",
+    dependencies = "vim-dadbod",
+  },
+  {
+    "preservim/vim-pencil",
+    config = function()
+      -- Configuración de vim-pencil
+      vim.g["pencil#textwidth"] = 80
+      vim.g["pencil#wrapModeDefault"] = "soft"
+      vim.cmd([[
+        autocmd BufRead,BufNewFile * call pencil#init()
+      ]])
+
+      -- Activar vim-pencil automáticamente en ciertos tipos de archivo
+      --[[vim.cmd([[
+        autocmd FileType markdown,mkd,text call pencil#init()
+      ]]
+    end,
   },
 }

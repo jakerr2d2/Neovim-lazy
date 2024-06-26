@@ -44,13 +44,6 @@ map("n", "<leader>we", "<cmd>WindowsEqualize<cr>", { desc = "Equalize windows" }
 -- TODO: Add Organizate Windows
 map("n", "<leader>wo", "<cmd>WinShift<cr>", { desc = "Organizate window" })
 
---[[ TODO: Add Harpoon
-local harpoon = require("harpoon")
-harpoon:setup()
-vim.keymap.set("n", "<leader>H", function()
-  harpoon:list():add()
-end, { desc = "Harpoon File" })]]
-
 -- TODO: Add Ray
 map("v", "<leader>ct", "<cmd>Ray<cr>", { desc = "Snap Code" })
 
@@ -58,3 +51,12 @@ map("v", "<leader>ct", "<cmd>Ray<cr>", { desc = "Snap Code" })
 map("n", "<leader>cp", "<cmd>LiveServerStart<cr>", { desc = "Liveserver start" })
 map("n", "<leader>cQ", "<cmd>LiveServerStop<cr>", { desc = "LiveServer Stop" })
 map("n", "<leader>cq", "<cmd>LiveServerToggle<cr>", { desc = "LiveServer Toggle" })
+
+--TODO: Add Decisive
+map("n", "<leader>cbc", ":lua require('decisive').align_csv({})<cr>", { desc = "align CSV", silent = true })
+map("n", "<leader>cbs", ":lua require('decisive').align_csv_clear({})<cr>", { desc = "align CSV clear", silent = true })
+map("n", "[x", ":lua require('decisive').align_csv_prev_col()<cr>", { desc = "align CSV prev col", silent = true })
+map("n", "]z", ":lua require('decisive').align_csv_next_col()<cr>", { desc = "align CSV next col", silent = true })
+
+--TODO: add csvlens
+map("n", "<leader>cbz", "<cmd>Csvlens<cr>", { desc = "csv lens", silent = true })

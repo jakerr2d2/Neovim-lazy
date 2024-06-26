@@ -18,6 +18,7 @@ return {
     opts = { lsp = { auto_attach = true } },
   },
   {
+    --NOTE: enable live server
     "ngtuonghy/live-server-nvim",
     event = "VeryLazy",
     build = ":LiveServerInstall",
@@ -25,8 +26,20 @@ return {
       require("live-server-nvim").setup({})
     end,
   },
+
+  --WARNING: PLUGINS FOR CSV
   {
-    --TODO: Mayusculas en SQL
-    "jsborjesson/vim-uppercase-sql",
+    --TODO: add decisive
+    "emmanueltouzery/decisive.nvim",
+  },
+  {
+    --TODO: add csvlens
+    "theKnightsOfRohan/csvlens.nvim",
+    dependencies = {
+      "akinsho/toggleterm.nvim",
+    },
+    config = true,
+    opts = { --[[ Place your opts here ]]
+    },
   },
 }

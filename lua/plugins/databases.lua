@@ -1,4 +1,4 @@
-local sql_ft = { "sql", "mysql", "plsql" }
+local sql_ft = { "sql", "mysql", "plsql", "mariadb" }
 
 return {
   recommended = function()
@@ -37,10 +37,11 @@ return {
       })
     end,
   },
+
   {
     "kristijanhusak/vim-dadbod-ui",
     cmd = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
-    dependencies = { "vim-dadbod", "vim-uppercase-sql" },
+    dependencies = "vim-dadbod",
     keys = {
       { "<leader>D", "<cmd>DBUIToggle<CR>", desc = "Toggle DBUI" },
     },
@@ -53,12 +54,28 @@ return {
       vim.g.db_ui_tmp_query_location = data_path .. "/dadbod_ui/tmp"
       vim.g.db_ui_use_nerd_fonts = true
       vim.g.db_ui_use_nvim_notify = true
+      vim.g.db_ui_force_echo_notifications = 1
 
       -- NOTE: The default behavior of auto-execution of queries on save is disabled
       -- this is useful when you have a big query that you don't want to run every time
       -- you save the file running those queries can crash neovim to run use the
       -- default keymap: <leader>S
       vim.g.db_ui_execute_on_save = false
+      --[[vim.g.db_ui_table_helpers = {
+        mysql = {
+          Count = "select count(1) from {optional_schema}{table}",
+          Explain = "EXPLAIN {last_query}",
+        },
+        sqlite = {
+          Describe = "PRAGMA table_info({table})",
+        },
+        mariadb = {
+          Count = "select count(1) from {optional_schema}{table}",
+          Explain = "EXPLAIN {last_query}",
+          Describe = "DESCRIBE {table}",
+          Table = "SELECT * FROM {table}",
+        },
+      }]]
     end,
   },
 
@@ -68,26 +85,56 @@ return {
     optional = true,
     opts = { ensure_installed = { "sql" } },
   },
-
   -- Edgy integration
   {
     "folke/edgy.nvim",
     optional = true,
     opts = function(_, opts)
+      opts.right = opts.right or {}
       table.insert(opts.right, {
         title = "Database",
         ft = "dbui",
         pinned = true,
-        width = 0.3,
+        width = 0.9,
         open = function()
           vim.cmd("DBUI")
         end,
       })
 
+      opts.bottom = opts.bottom or {}
       table.insert(opts.bottom, {
         title = "DB Query Result",
         ft = "dbout",
       })
+    end,
+  },
+
+  -- Linters & formatters
+  {
+    "williamboman/mason.nvim",
+    opts = { ensure_installed = { "sqlfluff" } },
+  },
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = function(_, opts)
+      for _, ft in ipairs(sql_ft) do
+        opts.linters_by_ft[ft] = opts.linters_by_ft[ft] or {}
+        table.insert(opts.linters_by_ft[ft], "sqlfluff")
+      end
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.formatters.sqlfluff = {
+        args = { "format", "--dialect=ansi", "-" },
+      }
+      for _, ft in ipairs(sql_ft) do
+        opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
+        table.insert(opts.formatters_by_ft[ft], "sqlfluff")
+      end
     end,
   },
 }
