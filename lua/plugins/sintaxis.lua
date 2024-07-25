@@ -1,6 +1,6 @@
 return {
   {
-    --NOTE: add nvim_context_vt
+    -- NOTE: add nvim_context_vt
     "andersevenrud/nvim_context_vt",
     depndencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
@@ -8,7 +8,7 @@ return {
     end,
   },
   {
-    --NOTE: add nvim-navbuddy
+    -- NOTE: add nvim-navbuddy
     "SmiteshP/nvim-navbuddy",
     dependencies = {
       "SmiteshP/nvim-navic",
@@ -18,7 +18,7 @@ return {
     opts = { lsp = { auto_attach = true } },
   },
   {
-    --NOTE: enable live server
+    -- NOTE: enable live server
     "ngtuonghy/live-server-nvim",
     event = "VeryLazy",
     build = ":LiveServerInstall",
@@ -27,19 +27,52 @@ return {
     end,
   },
 
-  --WARNING: PLUGINS FOR CSV
+  -- WARNING: PLUGINS FOR CSV
   {
-    --TODO: add decisive
+    -- TODO: add decisive
     "emmanueltouzery/decisive.nvim",
   },
   {
-    --TODO: add csvlens
+    -- TODO: add csvlens
     "theKnightsOfRohan/csvlens.nvim",
     dependencies = {
       "akinsho/toggleterm.nvim",
     },
     config = true,
     opts = { --[[ Place your opts here ]]
+    },
+  },
+
+  -- WARNING: PLUGINS FOR JAVA
+  {
+    -- TODO: add maven for java
+    "eatgrass/maven.nvim",
+    cmd = { "Maven", "MavenExec" },
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("maven").setup({
+        executable = "./mvnw",
+      })
+    end,
+  },
+
+  -- WARNING: MULTICURSORS IN NEOVIM
+  {
+    -- TODO: multicursors
+    "smoka7/multicursors.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvimtools/hydra.nvim",
+    },
+    opts = {},
+    cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+    keys = {
+      {
+        mode = { "v", "n" },
+        "<Leader>m",
+        "<cmd>MCstart<cr>",
+        desc = "multicursors",
+      },
     },
   },
 }

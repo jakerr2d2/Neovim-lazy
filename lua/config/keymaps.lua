@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
+--local opts = { buffer = 0 }
 --local neogit = require('neogit')
 
 --TODO: change keymap Esc for jj
@@ -14,7 +15,7 @@ map("n", "<leader>qr", "<cmd>wq<cr>", { desc = "Quit and save all" })
 -- TODO: Add only quit
 map("n", "<leader>qe", "<cmd>q<cr>", { desc = "Quit" })
 
---TODO:  Add tabs
+-- TODO:  Add tabs
 map("n", "<leader><tab>p", "<cmd>BufferLinePick<cr>", { desc = "Pick Tab" })
 map("n", "<leader><tab>q", "<cmd>BufferLinePickClose<cr>", { desc = "Pick Close Tab" })
 map("n", "<leader><tab>k", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Tab" })
@@ -26,7 +27,7 @@ map("n", "<leader><tab>h", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Prev Ta
 map("n", "<leader>gN", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Neogit (cwd) " })
 map("n", "<leader>gn", "<cmd>Neogit<cr>", { desc = "Neogit (root dir) " })
 
---TODO:  Add Code Runner
+-- TODO:  Add Code Runner
 map("n", "<leader>tU", ":RunCode<CR>", { noremap = true, silent = false })
 map("n", "<leader>tu", ":RunFile<CR>", { noremap = true, silent = false })
 map("n", "<leader>tv", ":RunFile tab<CR>", { noremap = true, silent = false })
@@ -45,18 +46,9 @@ map("n", "<leader>we", "<cmd>WindowsEqualize<cr>", { desc = "Equalize windows" }
 map("n", "<leader>wo", "<cmd>WinShift<cr>", { desc = "Organizate window" })
 
 -- TODO: Add Ray
-map("v", "<leader>ct", "<cmd>Ray<cr>", { desc = "Snap Code" })
+--map("v", "<leader>ct", "<cmd> Ray<cr>", { desc = "Snap Code" })
 
 -- TODO: Add LiveServer
 map("n", "<leader>cp", "<cmd>LiveServerStart<cr>", { desc = "Liveserver start" })
 map("n", "<leader>cQ", "<cmd>LiveServerStop<cr>", { desc = "LiveServer Stop" })
 map("n", "<leader>cq", "<cmd>LiveServerToggle<cr>", { desc = "LiveServer Toggle" })
-
---TODO: Add Decisive
-map("n", "<leader>cbc", ":lua require('decisive').align_csv({})<cr>", { desc = "align CSV", silent = true })
-map("n", "<leader>cbs", ":lua require('decisive').align_csv_clear({})<cr>", { desc = "align CSV clear", silent = true })
-map("n", "[x", ":lua require('decisive').align_csv_prev_col()<cr>", { desc = "align CSV prev col", silent = true })
-map("n", "]z", ":lua require('decisive').align_csv_next_col()<cr>", { desc = "align CSV next col", silent = true })
-
---TODO: add csvlens
-map("n", "<leader>cbz", "<cmd>Csvlens<cr>", { desc = "csv lens", silent = true })

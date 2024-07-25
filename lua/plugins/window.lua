@@ -10,7 +10,7 @@ return {
     --TODO: add nvim-window este siver para agregar a cada ventana una letra para trasladarse a ella
     "yorickpeterse/nvim-window",
     keys = {
-      { "<leader>wj", "<cmd>lua require('nvim-window').pick()<cr>", desc = "nvim-window: Jump to window" },
+      { "<leader>wa", "<cmd>lua require('nvim-window').pick()<cr>", desc = "nvim-window: Jump to window" },
     },
     config = true,
   },
