@@ -4,21 +4,21 @@ wk.add({
   -- NOTE: Use in Spanish
   { "<leader>t", group = "Translate", mode = "v", icon = "󰗊 " },
   { "<leader>ts", group = "Spanish", mode = "v", icon = "󰗊 " },
-  { "<leader>tss", "<cmd>Translate es -output=split<cr>", desc = "Split", mode = "v" },
-  { "<leader>tsr", "<cmd>Translate es -output=replace<cr>", desc = "Replace", mode = "v" },
-  { "<leader>tsi", "<cmd>Translate es -output=insert<cr>", desc = "Insert", mode = "v" },
-  { "<leader>tsa", "<cmd>Translate es -output=append<cr>", desc = "Append", mode = "v" },
-  { "<leader>tsg", "<cmd>Translate es -output=register<cr>", desc = "Register", mode = "v" },
-  { "<leader>tsf", "<cmd>Translate es -output=floating<cr>", desc = "Floating", mode = "v" },
+  { "<leader>tss", "<cmd>Translate es -output=split<cr>", desc = " Split", mode = "v" },
+  { "<leader>tsr", "<cmd>Translate es -output=replace<cr>", desc = " Replace", mode = "v" },
+  { "<leader>tsi", "<cmd>Translate es -output=insert<cr>", desc = " Insert", mode = "v" },
+  { "<leader>tsa", "<cmd>Translate es -output=append<cr>", desc = " Append", mode = "v" },
+  { "<leader>tsg", "<cmd>Translate es -output=register<cr>", desc = " Register", mode = "v" },
+  { "<leader>tsf", "<cmd>Translate es -output=floating<cr>", desc = " Floating", mode = "v" },
 
   -- NOTE: Use in English.
   { "<leader>te", group = "English", mode = "v", icon = "󰗊 " },
-  { "<leader>tes", "<cmd>Translate en -output=split<cr>", desc = "Translate Split", mode = "v" },
-  { "<leader>ter", "<cmd>Translate en -output=replace<cr>", desc = "Replace", mode = "v" },
-  { "<leader>tei", "<cmd>Translate en -output=insert<cr>", desc = "Insert", mode = "v" },
-  { "<leader>tea", "<cmd>Translate en -output=append<cr>", desc = "Append", mode = "v" },
-  { "<leader>teg", "<cmd>Translate en -output=register<cr>", desc = "Register", mode = "v" },
-  { "<leader>tef", "<cmd>Translate en -output=floating<cr>", desc = "Floating", mode = "v" },
+  { "<leader>tes", "<cmd>Translate en -output=split<cr>", desc = " Translate Split", mode = "v" },
+  { "<leader>ter", "<cmd>Translate en -output=replace<cr>", desc = " Replace", mode = "v" },
+  { "<leader>tei", "<cmd>Translate en -output=insert<cr>", desc = " Insert", mode = "v" },
+  { "<leader>tea", "<cmd>Translate en -output=append<cr>", desc = " Append", mode = "v" },
+  { "<leader>teg", "<cmd>Translate en -output=register<cr>", desc = " Register", mode = "v" },
+  { "<leader>tef", "<cmd>Translate en -output=floating<cr>", desc = " Floating", mode = "v" },
 
   -- NOTE: We added Ray although it is better manually.
   { "<leader>ct", "<cmd>'<,'> Ray<cr>", desc = "Snap Code", mode = "v" },
@@ -60,4 +60,15 @@ wk.add({
     desc = " prev CSV col",
     mode = "n",
   },
+})
+
+wk.add({
+  -- NOTE: Add Code Runner
+  { "<leader>tU", "<cmd>RunCode<cr>", noremap = true, silent = false },
+  { "<leader>tu", "<cmd>RunFile<cr>", noremap = true, silent = false },
+  { "<leader>tv", "<cmd>RunFile tab<cr>", noremap = true, silent = false },
+  { "<leader>tV", "<cmd>RunProject<cr>", noremap = true, silent = false },
+  { "<leader>tw", "<cmd>RunClose<cr>", noremap = true, silent = false },
+  { "<leader>tW", "<cmd>CRFiletype<cr>", noremap = true, silent = false },
+  { "<leader>tx", "<cmd>CRProjects<cr>", noremap = true, silent = false },
 })

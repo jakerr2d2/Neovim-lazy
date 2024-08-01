@@ -27,15 +27,6 @@ map("n", "<leader><tab>h", "<cmd>BufferLineMovePrev<cr>", { desc = "Move Prev Ta
 map("n", "<leader>gN", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Neogit (cwd) " })
 map("n", "<leader>gn", "<cmd>Neogit<cr>", { desc = "Neogit (root dir) " })
 
--- TODO:  Add Code Runner
-map("n", "<leader>tU", ":RunCode<CR>", { noremap = true, silent = false })
-map("n", "<leader>tu", ":RunFile<CR>", { noremap = true, silent = false })
-map("n", "<leader>tv", ":RunFile tab<CR>", { noremap = true, silent = false })
-map("n", "<leader>tV", ":RunProject<CR>", { noremap = true, silent = false })
-map("n", "<leader>tw", ":RunClose<CR>", { noremap = true, silent = false })
-map("n", "<leader>tW", ":CRFiletype<CR>", { noremap = true, silent = false })
-map("n", "<leader>tx", ":CRProjects<CR>", { noremap = true, silent = false })
-
 -- TODO: Add Maximize
 map("n", "<leader>wz", "<cmd>WindowsMaximize<cr>", { desc = "Maximizw window" })
 map("n", "<leader>wv", "<cmd>WindowsMaximizeVertically<cr>", { desc = "Maximize window vertically" })
