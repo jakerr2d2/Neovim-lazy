@@ -59,8 +59,10 @@ require("dashboard").setup({
     footer = {
       "  ",
       "  ",
-      '"Todo el Mundo esta en mi contra de lo contario no seria Justo"',
-      "Anonimo",
+      --[['"Todo el Mundo esta en mi contra de lo contario no seria Justo"',
+      "Anonimo",]]
+      '"Heroes come and go, But legends Are forever"',
+      "     Kobe Bryant",
     },
   },
 })

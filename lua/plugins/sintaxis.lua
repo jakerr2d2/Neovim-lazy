@@ -26,7 +26,50 @@ return {
       require("live-server-nvim").setup({})
     end,
   },
-
+  {
+    -- NOTE: Improve Treesitter highlighting
+    "m-demare/hlargs.nvim",
+  },
+  {
+    -- NOTE: add better escape for jk and jj
+    "max397574/better-escape.nvim",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+  {
+    -- NOTE: smartcolumn for line of code
+    "m4xshen/smartcolumn.nvim",
+    opts = {
+      colorcolumn = "80",
+      disabled_filetypes = {
+        "NvimTree",
+        "lazy",
+        "mason",
+        "help",
+        "checkhealth",
+        "lspinfo",
+        "noice",
+        "Trouble",
+        "fish",
+        "zsh",
+        "help",
+        "text",
+        "markdown",
+        "dashboard",
+      },
+      custom_colorcolumn = {},
+      scope = "line",
+    },
+  },
+  {
+    -- NOTE: add dropbar
+    "Bekaboo/dropbar.nvim",
+    -- optional, but required for fuzzy finder support
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+    },
+  },
   -- WARNING: PLUGINS FOR CSV
   {
     -- TODO: add decisive
@@ -76,3 +119,34 @@ return {
     },
   },
 }
+--[[
+{
+  -- NOTE: Barbecue navivar
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    --[[
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
+
+},]]
+--[[
+{
+  -- NOTE: add virt-column for line of code.
+    "lukas-reineke/virt-column.nvim",
+    opts = {},
+    config = function()
+      require("virt-column").setup({
+          char = "!", -- Carácter que se mostrará como columna
+          virtcolumn = "80", -- Posición de la columna, en este caso la columna 80
+          exclude = {
+          filetypes = { "dashboard", "NvimTree", "help", "terminal", "TelescopePrompt", "lazy", "text" },
+          },
+          })
+  end,
+},]]
