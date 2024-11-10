@@ -4,7 +4,7 @@ require("code_runner").setup({
   -- Focus on runner window(only works on toggle, term and tab mode)
   focus = true,
   -- startinsert (see ':h inserting-ex')
-  startinsert = false,
+  startinsert = true,
   insert_prefix = "",
   term = {
     --  Position to open the terminal, this option is ignored if mode ~= term
@@ -17,6 +17,9 @@ require("code_runner").setup({
     -- Window border (see ':h nvim_open_win')
     border = "rounded",
 
+    hot_reload = true,
+    focus = true,
+
     -- Num from `0 - 1` for measurements
     height = 0.8,
     width = 0.8,
@@ -28,7 +31,7 @@ require("code_runner").setup({
     float_hl = "Normal",
 
     -- Transparency (see ':h winblend')
-    blend = 0,
+    blend = 15,
   },
   better_term = { -- Toggle mode replacement
     clean = false, -- Clean terminal before launch

@@ -9,6 +9,7 @@ return {
       integrations = {
         telescope = true,
       },
+      kind = "floating",
     },
   },
 }

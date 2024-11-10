@@ -77,9 +77,9 @@ wk.add({
   { "<leader>m", "<cmd>MCstart<cr>", desc = "Multicursors", mode = { "v", "n" }, icon = "󱄧" },
 })
 
+-- NOTE: add ufo nvim.
+-- TODO: Zen mode
 wk.add({
-  -- NOTE: add ufo nvim.
-  -- TODO: Zen mode
   { "<leader>y", group = "UFO deploys", mode = "n", icon = "👾" },
   {
     "<leader>yo",
@@ -123,7 +123,7 @@ wk.add({
         vim.lsp.buf.hover()
       end
     end,
-    desc = "Close Folds Under",
+    desc = "See preview",
     mode = "n",
   },
 })
@@ -168,4 +168,6 @@ wk.add({
 wk.add({
   -- TODO: Add File Browser
   { "<leader>fw", "<cmd>Telescope file_browser<cr>", desc = "File Browser" },
+  -- TODO: Add File Browser
+  { "<leader>fo", "<cmd>Telescope smart_open<cr>", desc = "File Browser" },
 })

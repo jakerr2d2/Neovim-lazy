@@ -4,7 +4,23 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
+      flavour = "mocha",
       transparent_background = true,
+      styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+        comments = { "italic" }, -- Change the style of comments
+        conditionals = { "italic" },
+        loops = { "italic" },
+        functions = {},
+        keywords = { "italic" },
+        strings = { "italic" },
+        variables = { "italic" },
+        numbers = { "italic" },
+        booleans = { "italic" },
+        properties = { "italic" },
+        types = { "italic" },
+        operators = { "italic" },
+        -- miscs = {}, -- Uncomment to turn off hard-coded styles
+      },
       integrations = {
         aerial = true,
         cmp = true,
@@ -46,66 +62,6 @@ return {
           DashboardHeader = { fg = "#2ecc71" },
         }
       end,
-    },
-  },
-  {
-    "olivercederborg/poimandres.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("poimandres").setup({
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-        bold_vert_split = false, -- use bold vertical separators
-        dim_nc_background = false, -- dim 'non-current' window backgrounds
-        disable_background = false, -- disable background
-        disable_float_background = false, -- disable background for floats
-        disable_italics = true, -- disable italics
-      })
-    end,
-
-    -- optionally set the colorscheme within lazy config
-    init = function()
-      vim.cmd("colorscheme poimandres")
-    end,
-  },
-  {
-    "sainnhe/sonokai",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.sonokai_enable_italic = true
-      --   vim.cmd.colorscheme("sonokai")
-    end,
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    lazy = false,
-    priority = 1000,
-    name = "onedarkpro",
-    config = function()
-      require("onedarkpro").setup({
-        options = {
-          transparency = true,
-          terminal_colors = false,
-          highlight_inactive_windows = true,
-        },
-      })
-    end,
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    opts = {
-      style = "night",
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
     },
   },
   {

@@ -1,57 +1,47 @@
 return {
+
+  -- TODO: Add ray
   {
-    -- TODO: Add ray
     "sudoerwx/vim-ray-so-beautiful",
     event = "VeryLazy",
   },
+
+  -- TODO: Uppercase in SQL
   {
-    -- TODO: Uppercase in SQL
     "jsborjesson/vim-uppercase-sql",
     dependencies = "vim-dadbod",
   },
+
+  -- TODO: Gradle en Neovim
   {
-    -- TODO: Gradle en Neovim
     "hdiniz/vim-gradle",
   },
+
   -- WARNING: ZEN MODE
+  -- TODO: Zen mode
   {
-    -- TODO: Zen mode
     "folke/zen-mode.nvim",
     opts = {},
   },
+
+  -- TODO: true-zen mode
   {
-    -- TODO: Zen mode
     "Pocco81/true-zen.nvim",
     config = function()
-      require("true-zen").setup({
-        minimalist = {
-          ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
-          options = { -- options to be disabled when entering Minimalist mode
-            number = true,
-            relativenumber = true,
-            showtabline = 0,
-            signcolumn = "no",
-            statusline = "",
-            cmdheight = 1,
-            laststatus = 0,
-            showcmd = false,
-            showmode = false,
-            ruler = false,
-            numberwidth = 1,
-          },
-        },
-      })
+      require("true-zen").setup({})
     end,
   },
+
+  -- TODO: Add code_runner
   {
-    -- TODO: Add code_runner
     "CRAG666/code_runner.nvim",
     config = function()
       require("/complements/coderunner")
     end,
   },
+
+  -- TODO: Add autosave
   {
-    -- TODO: Add autosave
     "0x00-ketsu/autosave.nvim",
     -- lazy-loading on events
     event = { "InsertLeave", "TextChanged" },
@@ -59,16 +49,18 @@ return {
       require("autosave").setup({})
     end,
   },
+
+  -- NOTE: Beautiful object rain effect in Neovim
   {
-    -- NOTE: Beautiful object rain effect in Neovim
     "folke/drop.nvim",
     event = "VimEnter",
     config = function()
-      require("drop").setup({ theme = "spring", filetypes = { "Dashboard" } })
+      require("drop").setup({ theme = "snow", filetypes = { "Dashboard" } })
     end,
   },
+
+  -- TODO: Correct the text so that it is not so long.
   {
-    -- TODO: Correct the text so that it is not so long.
     "preservim/vim-pencil",
     config = function()
       -- Configuración de vim-pencil
@@ -79,8 +71,9 @@ return {
       ]])
     end,
   },
+
+  -- TODO: Flowline in Git
   {
-    -- TODO: Flowline in Git
     "rbong/vim-flog",
     lazy = true,
     cmd = { "Flog", "Flogsplit", "Floggit" },
@@ -88,8 +81,9 @@ return {
       "tpope/vim-fugitive",
     },
   },
+
+  -- TODO: Translate de Neovim
   {
-    -- TODO: Translate de Neovim
     "uga-rosa/translate.nvim",
     config = function()
       require("translate").setup({
@@ -99,8 +93,9 @@ return {
       })
     end,
   },
+
+  -- TODO: Reactive plugin
   {
-    -- TODO: Reactive plugin
     "rasulomaroff/reactive.nvim",
     config = function()
       require("reactive").setup({
@@ -108,16 +103,19 @@ return {
       })
     end,
   },
-  {
-    -- TODO: Telescope File Browser
+
+  -- TODO: Telescope File Browser
+  --[[
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
       require("telescope").load_extension("file_browser")
     end,
-  },
+  },]]
+  --
+
+  -- TODO: Handle BufNewFile
   {
-    -- TODO: Handle BufNewFile
     "ghillb/cybu.nvim",
     branch = "main", -- timely updates
     -- branch = "v1.x", -- won't receive breaking changes
@@ -134,8 +132,9 @@ return {
       vim.keymap.set({ "n", "v" }, "<c-tab>", "<plug>(CybuLastusedNext)")
     end,
   },
+
+  -- TODO: Smooth cursor
   {
-    -- TODO: Smooth cursor
     "gen740/SmoothCursor.nvim",
     config = function()
       require("smoothcursor").setup({ cursor = "󰀫" })
@@ -167,16 +166,54 @@ return {
       })
     end,
   },
+
   -- WARNING: Function Deployment
+  -- NOTE: Add nvim-ufo
   {
-    -- NOTE: Add nvim-ufo
     "kevinhwang91/nvim-ufo",
     dependencies = "kevinhwang91/promise-async",
   },
+
+  -- NOTE: Add nvim-origami
   {
-    -- NOTE: Add nvim-origami
     "chrisgrieser/nvim-origami",
     event = "BufReadPost", -- later or on keypress would prevent saving folds
     opts = {}, -- needed even when using default config
+  },
+
+  --- NOTE: Telescope open intelligent
+  {
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
+    config = function()
+      require("telescope").load_extension("smart_open")
+    end,
+    dependencies = {
+      "kkharji/sqlite.lua",
+      -- Only required if using match_algorithm fzf
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      -- Optional.  If installed, native fzy will be used when match_algorithm is fzy
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+    },
+  },
+
+  -- NOTE: Codeium para Neovim
+  {
+    "Exafunction/codeium.vim",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set("i", "<C-a>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-;>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, silent = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true, silent = true })
+    end,
   },
 }

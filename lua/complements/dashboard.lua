@@ -8,11 +8,11 @@ require("dashboard").setup({
   config = {
     week_header = {
       enable = true,
-      italic_comments = false,
+      italic_comments = true,
     },
     shortcut = {
       {
-        desc = " Files ",
+        desc = "  Files ",
         group = "@property",
         action = "Telescope find_files",
         key = "f",
@@ -24,13 +24,13 @@ require("dashboard").setup({
         key = "l",
       },
       {
-        desc = " Lazy Extra",
+        desc = "  Lazy Extra",
         group = "DiagnosticHint",
         action = "LazyExtras",
         key = "j",
       },
       {
-        desc = "󰊢 Git ",
+        desc = "󰊢  Git",
         group = "Number",
         action = "Neogit cwd=%:p:h",
         key = "n",
@@ -44,7 +44,7 @@ require("dashboard").setup({
         key = "z",
       },
       {
-        desc = " Exit ",
+        desc = "  Exit",
         group = "@property",
         action = "qa",
         key = "e",
