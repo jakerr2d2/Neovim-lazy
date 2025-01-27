@@ -12,11 +12,6 @@ return {
     dependencies = "vim-dadbod",
   },
 
-  -- TODO: Gradle en Neovim
-  {
-    "hdiniz/vim-gradle",
-  },
-
   -- WARNING: ZEN MODE
   -- TODO: Zen mode
   {
@@ -28,7 +23,14 @@ return {
   {
     "Pocco81/true-zen.nvim",
     config = function()
-      require("true-zen").setup({})
+      require("true-zen").setup({
+        integrations = {
+          kitty = {
+            enabled = true,
+            font = "+5",
+          },
+        },
+      })
     end,
   },
 
@@ -55,7 +57,7 @@ return {
     "folke/drop.nvim",
     event = "VimEnter",
     config = function()
-      require("drop").setup({ theme = "snow", filetypes = { "Dashboard" } })
+      require("drop").setup({ theme = "arcade", filetypes = { "Dashboard" } })
     end,
   },
 
@@ -104,16 +106,6 @@ return {
     end,
   },
 
-  -- TODO: Telescope File Browser
-  --[[
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    config = function()
-      require("telescope").load_extension("file_browser")
-    end,
-  },]]
-  --
-
   -- TODO: Handle BufNewFile
   {
     "ghillb/cybu.nvim",
@@ -126,10 +118,10 @@ return {
         return
       end
       cybu.setup()
-      vim.keymap.set("n", "K", "<Plug>(CybuPrev)")
-      vim.keymap.set("n", "J", "<Plug>(CybuNext)")
-      vim.keymap.set({ "n", "v" }, "<c-s-tab>", "<plug>(CybuLastusedPrev)")
-      vim.keymap.set({ "n", "v" }, "<c-tab>", "<plug>(CybuLastusedNext)")
+      --vim.keymap.set("n", "K", "<Plug>(CybuPrev)")
+      --vim.keymap.set("n", "J", "<Plug>(CybuNext)")
+      --vim.keymap.set({ "n", "v" }, "<c-s-tab>", "<plug>(CybuLastusedPrev)")
+      --vim.keymap.set({ "n", "v" }, "<c-tab>", "<plug>(CybuLastusedNext)")
     end,
   },
 
@@ -180,6 +172,7 @@ return {
     event = "BufReadPost", -- later or on keypress would prevent saving folds
     opts = {}, -- needed even when using default config
   },
+  --
 
   --- NOTE: Telescope open intelligent
   {
@@ -197,23 +190,14 @@ return {
     },
   },
 
-  -- NOTE: Codeium para Neovim
+  -- NOTE: Add oil nvim
   {
-    "Exafunction/codeium.vim",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<C-a>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-;>", function()
-        return vim.fn["codeium#CycleCompletions"](1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-,>", function()
-        return vim.fn["codeium#CycleCompletions"](-1)
-      end, { expr = true, silent = true })
-      vim.keymap.set("i", "<c-x>", function()
-        return vim.fn["codeium#Clear"]()
-      end, { expr = true, silent = true })
-    end,
+    "stevearc/oil.nvim",
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
 }

@@ -5,6 +5,7 @@ require("config.lazy")
 require("complements.dashboard")
 require("complements.format")
 require("complements.ufo")
+require("complements.oil_nvim")
 
 --My favorite language is Spanish and changing it is a complicated task
 --Hello, how are you my dear friend? I'm calling you to see how you are.

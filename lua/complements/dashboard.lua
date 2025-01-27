@@ -39,7 +39,7 @@ require("dashboard").setup({
         desc = " Restore ",
         group = "DiagnosticHint",
         action = function()
-          require("persistence").load()
+          require("persistence").select()
         end,
         key = "z",
       },
@@ -61,8 +61,8 @@ require("dashboard").setup({
       "  ",
       --[['"Todo el Mundo esta en mi contra de lo contario no seria Justo"',
       "Anonimo",]]
-      '"Heroes come and go, But legends Are forever"',
-      "     Kobe Bryant",
+      '"Sin Reservas, Sin Retorno, Sin Remordimiento"',
+      "William Borden",
     },
   },
 })

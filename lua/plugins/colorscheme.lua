@@ -36,6 +36,7 @@ return {
         mason = true,
         markdown = true,
         mini = true,
+        snacks = false,
         native_lsp = {
           enabled = true,
           underlines = {

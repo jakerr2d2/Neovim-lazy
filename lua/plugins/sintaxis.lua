@@ -1,14 +1,16 @@
 return {
+
+  -- NOTE: add nvim_context_vt
   {
-    -- NOTE: add nvim_context_vt
     "andersevenrud/nvim_context_vt",
     depndencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("nvim_context_vt").setup({})
     end,
   },
+
+  -- NOTE: add nvim-navbuddy
   {
-    -- NOTE: add nvim-navbuddy
     "SmiteshP/nvim-navbuddy",
     dependencies = {
       "SmiteshP/nvim-navic",
@@ -17,8 +19,9 @@ return {
     },
     opts = { lsp = { auto_attach = true } },
   },
+
+  -- NOTE: enable live server
   {
-    -- NOTE: enable live server
     "ngtuonghy/live-server-nvim",
     event = "VeryLazy",
     build = ":LiveServerInstall",
@@ -26,19 +29,22 @@ return {
       require("live-server-nvim").setup({})
     end,
   },
+
+  -- NOTE: Improve Treesitter highlighting
   {
-    -- NOTE: Improve Treesitter highlighting
     "m-demare/hlargs.nvim",
   },
+
+  -- NOTE: add better escape for jk and jj
   {
-    -- NOTE: add better escape for jk and jj
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup()
     end,
   },
+
+  -- NOTE: smartcolumn for line of code
   {
-    -- NOTE: smartcolumn for line of code
     "m4xshen/smartcolumn.nvim",
     opts = {
       colorcolumn = "80",
@@ -62,21 +68,25 @@ return {
       scope = "line",
     },
   },
+
+  -- NOTE: add dropbar
   {
-    -- NOTE: add dropbar
     "Bekaboo/dropbar.nvim",
     -- optional, but required for fuzzy finder support
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
     },
   },
+
   -- WARNING: PLUGINS FOR CSV
+
+  -- TODO: add decisive
   {
-    -- TODO: add decisive
     "emmanueltouzery/decisive.nvim",
   },
+
+  -- TODO: add csvlens
   {
-    -- TODO: add csvlens
     "theKnightsOfRohan/csvlens.nvim",
     dependencies = {
       "akinsho/toggleterm.nvim",
@@ -87,8 +97,9 @@ return {
   },
 
   -- WARNING: PLUGINS FOR JAVA
+
+  -- TODO: add maven for java
   {
-    -- TODO: add maven for java
     "eatgrass/maven.nvim",
     cmd = { "Maven", "MavenExec" },
     dependencies = "nvim-lua/plenary.nvim",
@@ -100,8 +111,9 @@ return {
   },
 
   -- WARNING: MULTICURSORS IN NEOVIM
+
+  -- TODO: multicursors
   {
-    -- TODO: multicursors
     "smoka7/multicursors.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -119,34 +131,3 @@ return {
     },
   },
 }
---[[
-{
-  -- NOTE: Barbecue navivar
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    --[[
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {
-      -- configurations go here
-    },
-
-},]]
---[[
-{
-  -- NOTE: add virt-column for line of code.
-    "lukas-reineke/virt-column.nvim",
-    opts = {},
-    config = function()
-      require("virt-column").setup({
-          char = "!", -- Carácter que se mostrará como columna
-          virtcolumn = "80", -- Posición de la columna, en este caso la columna 80
-          exclude = {
-          filetypes = { "dashboard", "NvimTree", "help", "terminal", "TelescopePrompt", "lazy", "text" },
-          },
-          })
-  end,
-},]]

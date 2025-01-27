@@ -1,5 +1,7 @@
 return {
-  { --TODO: add terminal
+
+  -- TODO: add terminal
+  {
     "akinsho/toggleterm.nvim",
     version = "*",
     config = function()
@@ -22,6 +24,19 @@ return {
           winblend = 8,
         },
       })
+    end,
+  },
+  {
+    "kelly-lin/ranger.nvim",
+    config = function()
+      require("ranger-nvim").setup({ replace_netrw = true })
+      --[[vim.api.nvim_set_keymap("n", "<leader>fa", "", {
+        noremap = true,
+        callback = function()
+          require("ranger-nvim").open(true)
+        end,
+      })]]
+      --
     end,
   },
 }
