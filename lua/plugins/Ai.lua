@@ -1,5 +1,7 @@
 return {
+
   -- NOTE: Agregamos codecompanion.nvim a la lista de complementos
+  --[[
   {
     "olimorris/codecompanion.nvim",
     dependencies = {
@@ -37,17 +39,32 @@ return {
         end,
       },
     },
-  },
+  },]]
 
   -- NOTE: Agregamos avante.nvim a la lista de complementos
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
-    version = false, -- set this if you want to always pull the latest change
+    version = false, -- NOTE:  Establezca esto si siempre desea realizar el último cambio
     opts = {
-      -- add any opts here
+      -- NOTE:  Agregue cualquier opción aquí
       provider = "copilot",
+      copilot = {
+        model = "claude-3.5-sonnet",
+      },
+      --[[
+      provider = "gemini",
+      gemini = {
+        -- @see https://ai.google.dev/gemini-api/docs/models/gemini
+        --model = "gemini-1.5-pro-exp-0827",
+        -- model = "gemini-1.5-flash",
+        model = "gemini-2.0-flash",
+        --api_key = os.getenv("GEMINI_API_KEY"),
+        timeout = 30000,
+        temperature = 0,
+        max_tokens = 4096,
+      },]]
       behaviour = {
         auto_suggestions = false, -- Experimental stage
         auto_set_highlight_group = true,
@@ -57,9 +74,9 @@ return {
         minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
       },
       mappings = {
-        ask = "<leader>ua", -- ask
-        edit = "<leader>ue", -- edit
-        refresh = "<leader>ur", -- refresh
+        ask = "<leader>ia", -- ask
+        edit = "<leader>ie", -- edit
+        refresh = "<leader>ir", -- refresh
       },
       windows = {
         ---@type "right" | "left" | "top" | "bottom"
@@ -127,12 +144,28 @@ return {
     },
   },
 
+  -- NOTE: Agregamos iron.nvim a la lista de complementos
+  {
+    "Vigemus/iron.nvim",
+    config = function()
+      require("iron.core").setup({
+        repl_definition = {
+          python = { command = { "jupyter", "qtconsole", "--kernel=python3" } },
+        },
+        repl_open_cmd = "vsplit", -- Puedes cambiar a "split" o "botright vsplit"
+        keymaps = {
+          send_motion = "<leader>wb",
+          visual_send = "<leader>wc",
+          send_file = "<leader>wf",
+        },
+      })
+    end,
+  },
+
   -- NOTE: Agregamos Copilot Github a la lista de complementos
-  --
   { "github/copilot.vim" },
 
   -- NOTE: Agregamos Codeium para Neovim
-  --
   --[[
   {
     "Exafunction/codeium.vim",
@@ -151,5 +184,6 @@ return {
         return vim.fn["codeium#Clear"]()
       end, { expr = true, silent = true })
     end,
-  },]]
+  },
+  ]]
 }

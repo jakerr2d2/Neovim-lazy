@@ -52,7 +52,7 @@ return {
     end,
   },
 
-  -- NOTE: Beautiful object rain effect in Neovim
+  -- TODO: Beautiful object rain effect in Neovim
   {
     "folke/drop.nvim",
     event = "VimEnter",

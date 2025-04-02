@@ -28,6 +28,7 @@ wk.add({
 -- NOTE: IA code
 wk.add({
   -- TODO: Codecompanion
+  --[[
   { "<leader>i", group = "ia", mode = { "n", "v" }, icon = "󱚢 " },
   { "<leader>ia", "<cmd>CodeCompanion<cr>", desc = " Open Assistant", mode = "n", icon = ic },
   { "<leader>ib", "<cmd>CodeCompanionChat Add<cr>", desc = " Add Chat", mode = "v", icon = ic },
@@ -37,6 +38,7 @@ wk.add({
   { "<leader>id", "<cmd>CodeCompanionActions", desc = " Open Action", mode = "v", icon = " " },
   { "<leader>it", "<cmd>CodeCompanionChat Toggle<cr>", desc = " Toggle Assistant", mode = "n", icon = "󰨙 " },
   { "<leader>it", "<cmd>CodeCompanionChat Toggle<cr>", desc = " Toggle Assistant", mode = "v", icon = "󰨙 " },
+  ]]
 
   -- TODO: Avante
   { "<leader>j", group = "ia", mode = "n", icon = "󰭆 " },

@@ -17,9 +17,10 @@ map("n", "<leader>qe", "<cmd>q<cr>", { desc = "Quit" })
 
 -- TODO: Quit d
 map("n", "b", "d", { desc = "Quit" })
+map("v", "b", "d", { desc = "Quit" })
 
--- TODO: Quit u
-map("n", "m", "u", { desc = "Quit" })
+-- TODO: Regresar u
+map("n", "m", "u", { desc = "Return" })
 
 -- TODO: Add whichkey and create application maps.
 require("complements.whichkey")
@@ -58,3 +59,6 @@ local modes = { "n", "v", "x" }
 for key, func in pairs(keymap) do
   vim.keymap.set(modes, key, func)
 end
+
+--fasdfasdfasdf
+--fasdfasdfasdfa
