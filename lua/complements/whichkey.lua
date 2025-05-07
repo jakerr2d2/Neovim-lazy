@@ -50,6 +50,7 @@ wk.add({
   { "<leader>jf", "<cmd>AvanteFocus<cr>", desc = " Avante - Focus", mode = "n", icon = "󰋲 " },
   { "<leader>jr", "<cmd>AvanteRefresh<cr>", desc = " Avante - Refresh", mode = "n", icon = " " },
   { "<leader>jt", "<cmd>AvanteToggle<cr>", desc = " Avante - Toggle", mode = "n", icon = "󰨙 " },
+  { "<leader>jl", "<cmd>AvanteClear<cr>", desc = " Avante - Clear", mode = "n", icon = "󰃢 " },
 })
 
 -- NOTE: Buffers and Tabs

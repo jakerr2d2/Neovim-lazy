@@ -77,7 +77,6 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
     },
   },
-
   -- WARNING: PLUGINS FOR CSV
 
   -- TODO: add decisive

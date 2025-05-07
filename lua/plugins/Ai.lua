@@ -58,13 +58,15 @@ return {
       gemini = {
         -- @see https://ai.google.dev/gemini-api/docs/models/gemini
         --model = "gemini-1.5-pro-exp-0827",
-        -- model = "gemini-1.5-flash",
-        model = "gemini-2.0-flash",
+        --model = "gemini-1.5-flash",
+        --model = "gemini-2.0-flash",
+        model = "gemini-2.5-pro-exp-03-25",
         --api_key = os.getenv("GEMINI_API_KEY"),
         timeout = 30000,
         temperature = 0,
         max_tokens = 4096,
-      },]]
+      },
+      ]]
       behaviour = {
         auto_suggestions = false, -- Experimental stage
         auto_set_highlight_group = true,
@@ -163,10 +165,9 @@ return {
   },
 
   -- NOTE: Agregamos Copilot Github a la lista de complementos
-  { "github/copilot.vim" },
+  --{ "github/copilot.vim" },
 
   -- NOTE: Agregamos Codeium para Neovim
-  --[[
   {
     "Exafunction/codeium.vim",
     config = function()
@@ -185,5 +186,4 @@ return {
       end, { expr = true, silent = true })
     end,
   },
-  ]]
 }
