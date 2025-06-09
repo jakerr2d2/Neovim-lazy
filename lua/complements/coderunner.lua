@@ -38,4 +38,15 @@ require("code_runner").setup({
     number = 10, -- Use nil for dynamic number and set init
     init = nil,
   },
+  filetype = {
+    python = "python3 %",
+    cpp = "g++ % -o %< && ./%<",
+    c = "gcc % -o %< && ./%<",
+    go = "go run %",
+    rust = "cargo run",
+    php = {
+      "cd $dir &&",
+      "php $fileName",
+    },
+  },
 })

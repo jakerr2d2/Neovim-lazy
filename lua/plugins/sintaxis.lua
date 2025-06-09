@@ -129,4 +129,10 @@ return {
       },
     },
   },
+
+  -- TODO: View Text.
+  {
+    "wurli/visimatch.nvim",
+    opts = {},
+  },
 }

@@ -50,23 +50,25 @@ return {
     opts = {
       -- NOTE:  Agregue cualquier opción aquí
       provider = "copilot",
-      copilot = {
-        model = "claude-3.5-sonnet",
+
+      providers = {
+        copilot = {
+          model = "claude-3.5-sonnet",
+        },
+        gemini = {
+          -- @see https://ai.google.dev/gemini-api/docs/models/gemini
+          --model = "gemini-1.5-pro-exp-0827",
+          --model = "gemini-1.5-flash",
+          --model = "gemini-2.0-flash",
+          --model = "gemini-2.5-pro-exp-03-25",
+          --model = "gemini-2.5-pro-preview-05-06",
+          model = "gemini-2.5-flash-preview-05-20",
+          --api_key = os.getenv("GEMINI_API_KEY"),
+          timeout = 30000,
+          temperature = 0,
+          max_tokens = 4096,
+        },
       },
-      --[[
-      provider = "gemini",
-      gemini = {
-        -- @see https://ai.google.dev/gemini-api/docs/models/gemini
-        --model = "gemini-1.5-pro-exp-0827",
-        --model = "gemini-1.5-flash",
-        --model = "gemini-2.0-flash",
-        model = "gemini-2.5-pro-exp-03-25",
-        --api_key = os.getenv("GEMINI_API_KEY"),
-        timeout = 30000,
-        temperature = 0,
-        max_tokens = 4096,
-      },
-      ]]
       behaviour = {
         auto_suggestions = false, -- Experimental stage
         auto_set_highlight_group = true,
@@ -163,9 +165,6 @@ return {
       })
     end,
   },
-
-  -- NOTE: Agregamos Copilot Github a la lista de complementos
-  --{ "github/copilot.vim" },
 
   -- NOTE: Agregamos Codeium para Neovim
   {

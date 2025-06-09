@@ -10,6 +10,10 @@ return {
     luasnip.filetype_extend("htmldjango", { "html" })
     luasnip.filetype_extend("django-html", { "html" })
 
+    require("luasnip.loaders.from_lua").lazy_load({
+      paths = { "~/.config/nvim/lua/snippets" },
+    })
+
     return opts
   end,
 }
