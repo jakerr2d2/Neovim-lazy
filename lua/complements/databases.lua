@@ -79,13 +79,14 @@ return {
     end,
   },
 
-  -- Treesitter
+  -- NOTE: Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     optional = true,
     opts = { ensure_installed = { "sql" } },
   },
-  -- Edgy integration
+
+  -- NOTE: Edgy integration
   {
     "folke/edgy.nvim",
     optional = true,
@@ -109,11 +110,12 @@ return {
     end,
   },
 
-  -- Linters & formatters
+  -- NOTE: Linters & formatters
   {
     "williamboman/mason.nvim",
     opts = { ensure_installed = { "sqlfluff" } },
   },
+
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -124,6 +126,7 @@ return {
       end
     end,
   },
+
   {
     "stevearc/conform.nvim",
     optional = true,

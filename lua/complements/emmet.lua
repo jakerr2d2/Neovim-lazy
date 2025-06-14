@@ -1,18 +1,18 @@
--- emmet_ls setup
+-- NOTE: Is emmet_ls setup
 local lspconfig = require("lspconfig")
 local capabilitiesE = vim.lsp.protocol.make_client_capabilities()
 capabilitiesE.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.emmet_ls.setup({
-  -- on_attach = on_attach,
+  -- NOTE: on_attach = on_attach,
   capabilities = capabilitiesE,
-  filetypes = { 
+  filetypes = {
     "html",
-    "typescriptreact", 
-    "javascriptreact", 
-    "css", 
-    "sass", 
-    "scss", 
+    "typescriptreact",
+    "javascriptreact",
+    "css",
+    "sass",
+    "scss",
     "less",
     "htmldjango",
     "django-html",
@@ -20,7 +20,7 @@ lspconfig.emmet_ls.setup({
   init_options = {
     html = {
       options = {
-        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        -- NOTE: For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
         ["bem.enabled"] = true,
       },
     },

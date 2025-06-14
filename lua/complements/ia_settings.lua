@@ -1,4 +1,7 @@
+-- NOTE: settings codecompanion
+
 require("codecompanion").setup({
+
   opts = {
     language = "Spanish", -- Default is "English"
   },

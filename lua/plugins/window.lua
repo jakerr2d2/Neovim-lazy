@@ -1,6 +1,6 @@
 return {
 
-  -- TODO: add neoscroll este sirve para recorrer las ventana de manera mas fluida
+  -- NOTE: add neoscroll este sirve para recorrer las ventana de manera mas fluida
   {
     "karb94/neoscroll.nvim",
     config = function()

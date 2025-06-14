@@ -1,8 +1,8 @@
 require("dashboard").setup({
   theme = "hyper",
   hide = {
-    -- this is taken care of by lualine
-    -- enabling this messes up the actual laststatus setting after loading a file
+    -- NOTE: this is taken care of by lualine
+    -- NOTE: enabling this messes up the actual laststatus setting after loading a file
     statusline = false,
   },
   config = {
@@ -50,17 +50,9 @@ require("dashboard").setup({
         key = "e",
       },
     },
-    --[[footer = {
-        "  ",
-        "  ",
-        '"La oportunidad no toca la puerta, se presenta cuando derribas la puerta a golpes"',
-        "ANONIMO",
-      },]]
     footer = {
       "  ",
       "  ",
-      --[['"Todo el Mundo esta en mi contra de lo contario no seria Justo"',
-      "Anonimo",]]
       '"Sin Reservas, Sin Retorno, Sin Remordimiento"',
       "William Borden",
     },

@@ -1,4 +1,5 @@
 return {
+  -- NOTE: Add to Luasnip
   "L3MON4D3/LuaSnip",
   opts = function(_, opts)
     local luasnip = require("luasnip")

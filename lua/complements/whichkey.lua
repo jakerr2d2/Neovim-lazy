@@ -1,8 +1,7 @@
 local wk = require("which-key")
-local ic = " "
-local ic2 = "󱨚 "
 
 -- NOTE: Add Translate Neovim
+--
 wk.add({
 
   -- NOTE: Use in Spanish
@@ -125,7 +124,7 @@ wk.add({
   { "<leader>m", "<cmd>MCstart<cr>", desc = "Multicursors", mode = { "v", "n" }, icon = "󱄧" },
 })
 
--- TODO: Zen mode
+-- NOTE: Zen mode
 wk.add({
   { "<leader>z", group = "Zen mode", mode = "n", icon = "󰽐" },
   { "<leader>zn", "<cmd>TZNarrow<cr>", desc = "Narrow zen", mode = "n" },
@@ -198,10 +197,10 @@ wk.add({
 
 -- NOTE: CSV files
 wk.add({
-  -- TODO: Handling CSV files
+  -- NOTE: Handling CSV files
   { "<leader>cb", group = "files CSV", mode = "n", icon = "" },
 
-  -- TODO: Align CSV files
+  -- NOTE: Align CSV files
   {
     "<leader>cba",
     function()
@@ -211,7 +210,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: Clear align CSV files
+  -- NOTE: Clear align CSV files
   {
     "<leader>cbc",
     function()
@@ -221,10 +220,10 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: CSV lens
+  -- NOTE: CSV lens
   { "<leader>cbl", "<cmd>Csvlens<cr>", desc = " CSV lens", mode = "n" },
 
-  -- TODO: Align next column CSV files
+  -- NOTE: Align next column CSV files
   {
     "<leader>cbn",
     function()
@@ -234,7 +233,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: Align prev column CSV files
+  -- NOTE: Align prev column CSV files
   {
     "<leader>cbp",
     function()
@@ -248,7 +247,7 @@ wk.add({
 -- NOTE: Ranger files
 wk.add({
 
-  -- TODO: Ranger files
+  -- NOTE: Ranger files
   {
     "<leader>fa",
     function()
@@ -261,8 +260,8 @@ wk.add({
 
 -- NOTE: Add File Browser and Smart Open
 wk.add({
-  -- TODO: Add File Browser
+  -- NOTE: Add File Browser
   { "<leader>fw", "<cmd>Telescope file_browser<cr>", desc = "File Browser" },
-  -- TODO: Add File Browser
+  -- NOTE: Add File Browser
   { "<leader>fo", "<cmd>Telescope smart_open<cr>", desc = "Smart Open" },
 })

@@ -1,46 +1,5 @@
 return {
 
-  -- NOTE: Agregamos codecompanion.nvim a la lista de complementos
-  --[[
-  {
-    "olimorris/codecompanion.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    opts = {
-      display = {
-        chat = {
-          show_settings = true,
-        },
-      },
-      strategies = {
-        chat = {
-          adapter = "copilot",
-        },
-        inline = {
-          adapter = "copilot",
-        },
-        agent = {
-          adapter = "copilot",
-        },
-      },
-      adapters = {
-        copilot = function()
-          return require("codecompanion.adapters").extend("copilot", {
-            schema = {
-              model = {
-                default = "claude-3.5-sonnet",
-                --default = "o1-2024-12-17",
-                --default = "o1-mini-2024-09-12",
-              },
-            },
-          })
-        end,
-      },
-    },
-  },]]
-
   -- NOTE: Agregamos avante.nvim a la lista de complementos
   {
     "yetone/avante.nvim",
@@ -185,4 +144,45 @@ return {
       end, { expr = true, silent = true })
     end,
   },
+
+  -- NOTE: Agregamos codecompanion.nvim a la lista de complementos
+  --[[
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      display = {
+        chat = {
+          show_settings = true,
+        },
+      },
+      strategies = {
+        chat = {
+          adapter = "copilot",
+        },
+        inline = {
+          adapter = "copilot",
+        },
+        agent = {
+          adapter = "copilot",
+        },
+      },
+      adapters = {
+        copilot = function()
+          return require("codecompanion.adapters").extend("copilot", {
+            schema = {
+              model = {
+                default = "claude-3.5-sonnet",
+                --default = "o1-2024-12-17",
+                --default = "o1-mini-2024-09-12",
+              },
+            },
+          })
+        end,
+      },
+    },
+  },]]
 }

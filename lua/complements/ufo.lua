@@ -1,20 +1,8 @@
---[[local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'}
-for _, ls in ipairs(language_servers) do
-  require("lspconfig")[ls].setup({
-    capabilities = capabilities,
-    -- you can add other fields for setting up lsp server in this table
-  })
-end
-require("ufo").setup()]]
+-- NOTE: Configuration of ufo nvim.
 
 local handler = function(virtText, lnum, endLnum, width, truncate)
   local newVirtText = {}
-  local suffix = (" 󰘖 %d "):format(endLnum - lnum)
+  local suffix = ("   Lines %d "):format(endLnum - lnum)
   local sufWidth = vim.fn.strdisplaywidth(suffix)
   local targetWidth = width - sufWidth
   local curWidth = 0

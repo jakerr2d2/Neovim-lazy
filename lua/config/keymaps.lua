@@ -1,28 +1,28 @@
--- Keymaps are automatically loaded on the VeryLazy event
+-- NOTE: Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
---local opts = { buffer = 0 }
+-- NOTE: local opts = { buffer = 0 }
 --local neogit = require('neogit')
 
---TODO: change keymap Esc for jj
+-- NOTE: change keymap Esc for jj
 --map("i", "jj", "<Esc>", { noremap = true })
 
--- TODO: Add quit and save all
+-- NOTE: Add quit and save all
 map("n", "<leader>qr", "<cmd>wq<cr>", { desc = "Quit and save all" })
 
--- TODO: Add only quit
+-- NOTE: Add only quit
 map("n", "<leader>qe", "<cmd>q<cr>", { desc = "Quit" })
 
--- TODO: Quit d
+-- NOTE: Quit d
 map("n", "b", "d", { desc = "Quit" })
 map("v", "b", "d", { desc = "Quit" })
 
--- TODO: Regresar u
+-- NOTE: Regresar u
 map("n", "m", "u", { desc = "Return" })
 
--- TODO: Add whichkey and create application maps.
+-- NOTE: Add whichkey and create application maps.
 require("complements.whichkey")
 
 neoscroll = require("neoscroll")

@@ -35,4 +35,46 @@ return {
     i(1, "'Hello World'"),
     t(";"),
   }),
+
+  -- NOTE: Encabezado PHPDoc
+  s("phpdoc", {
+    t({
+      "/**",
+      ' * Script simple que muestra un mensaje de "Hola Mundo"',
+      " *",
+      " * PHP version 8.2",
+      " *",
+      " * @category ",
+    }),
+    i(1, "Demo"),
+    t({ "", " * @package  " }),
+    i(2, "HolaMundo"),
+    t({ "", " * @author   " }),
+    i(3, "Developer <developer@example.com>"),
+    t({ "", " * @license  " }),
+    i(4, "MIT License"),
+    t({ "", " * @link     " }),
+    i(5, "https://github.com/developer/hola-mundo"),
+    t({ "", " */" }),
+  }),
+
+  -- NOTE: <?php ... ?>
+  s("php", {
+    t("<?php"),
+    t({ "", "" }),
+    i(1, "// código PHP"),
+    t({ "", "" }),
+    t("?>"),
+  }),
+  --NOTE: print_r
+  s("print_r", {
+    t("print_r("),
+    i(1),
+    t(");"),
+  }),
+  s("print", {
+    t("print("),
+    i(1),
+    t(");"),
+  }),
 }

@@ -1,25 +1,25 @@
 return {
 
-  -- TODO: Add ray
+  -- NOTE: Add ray
   {
     "sudoerwx/vim-ray-so-beautiful",
     event = "VeryLazy",
   },
 
-  -- TODO: Uppercase in SQL
+  ---
+  -- NOTE: Uppercase in SQL
   {
     "jsborjesson/vim-uppercase-sql",
     dependencies = "vim-dadbod",
   },
 
-  -- WARNING: ZEN MODE
-  -- TODO: Zen mode
+  -- NOTE: Zen mode
   {
     "folke/zen-mode.nvim",
     opts = {},
   },
 
-  -- TODO: true-zen mode
+  -- NOTE: true-zen mode
   {
     "Pocco81/true-zen.nvim",
     config = function()
@@ -34,7 +34,7 @@ return {
     end,
   },
 
-  -- TODO: Add code_runner
+  -- NOTE: Add code_runner
   {
     "CRAG666/code_runner.nvim",
     config = function()
@@ -42,7 +42,7 @@ return {
     end,
   },
 
-  -- TODO: Add autosave
+  -- NOTE: Add autosave
   {
     "0x00-ketsu/autosave.nvim",
     -- lazy-loading on events
@@ -52,7 +52,7 @@ return {
     end,
   },
 
-  -- TODO: Beautiful object rain effect in Neovim
+  -- NOTE: Beautiful object rain effect in Neovim
   {
     "folke/drop.nvim",
     event = "VimEnter",
@@ -61,7 +61,7 @@ return {
     end,
   },
 
-  -- TODO: Correct the text so that it is not so long.
+  -- NOTE: Correct the text so that it is not so long.
   {
     "preservim/vim-pencil",
     config = function()
@@ -74,7 +74,7 @@ return {
     end,
   },
 
-  -- TODO: Flowline in Git
+  -- NOTE: Flowline in Git
   {
     "rbong/vim-flog",
     lazy = true,
@@ -84,7 +84,7 @@ return {
     },
   },
 
-  -- TODO: Translate de Neovim
+  -- NOTE: Translate de Neovim
   {
     "uga-rosa/translate.nvim",
     config = function()
@@ -125,7 +125,8 @@ return {
     end,
   },
 
-  -- TODO: Smooth cursor
+  --
+  -- NOTE: Smooth cursor
   {
     "gen740/SmoothCursor.nvim",
     config = function()
@@ -159,7 +160,6 @@ return {
     end,
   },
 
-  -- WARNING: Function Deployment
   -- NOTE: Add nvim-ufo
   {
     "kevinhwang91/nvim-ufo",
@@ -179,7 +179,7 @@ return {
     end,
   },
 
-  --- NOTE: Telescope open intelligent
+  -- NOTE: Telescope open intelligent
   {
     "danielfalk/smart-open.nvim",
     branch = "0.2.x",
@@ -195,7 +195,6 @@ return {
     },
   },
 
-  --
   -- NOTE: Add oil nvim
   {
     "stevearc/oil.nvim",

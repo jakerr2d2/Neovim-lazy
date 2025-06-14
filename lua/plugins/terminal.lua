@@ -1,6 +1,6 @@
 return {
 
-  -- TODO: add terminal
+  -- NOTE: add terminal
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -26,6 +26,8 @@ return {
       })
     end,
   },
+
+  -- NOTE: add ranger
   {
     "kelly-lin/ranger.nvim",
     config = function()

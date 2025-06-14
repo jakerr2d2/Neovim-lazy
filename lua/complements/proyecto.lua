@@ -1,4 +1,5 @@
 return {
+  -- NOTE: Init of Project
   "ahmedkhalf/project.nvim",
   opts = {
     manual_mode = false,

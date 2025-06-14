@@ -1,4 +1,5 @@
 return {
+  -- NOTE: add catppuccin
   {
     "catppuccin/nvim",
     lazy = true,
@@ -65,6 +66,8 @@ return {
       end,
     },
   },
+
+  -- NOTE: add LazyVim colorscheme
   {
     "LazyVim/LazyVim",
     opts = {

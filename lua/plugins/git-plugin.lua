@@ -1,4 +1,6 @@
 return {
+
+  -- NOTE: Add to Neogit
   {
     "NeogitOrg/neogit",
     dependencies = {

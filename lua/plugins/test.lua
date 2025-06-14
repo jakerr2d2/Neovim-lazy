@@ -1,4 +1,5 @@
 return {
+  -- NOTE: add neotest
   {
     "nvim-neotest/neotest",
     opts = {

@@ -2,3 +2,4 @@
 require("conform").formatters_by_ft.htmldjango = { "djlint" }
 require("conform").formatters_by_ft.mysql = { "sqlfluff" }
 require("conform").formatters_by_ft.sh = { "shellharden" }
+require("conform").formatters_by_ft.php = { "phpcbf" }

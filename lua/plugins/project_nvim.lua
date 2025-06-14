@@ -1,4 +1,5 @@
 return {
+  -- NOTE: Add project
   {
     "ahmedkhalf/project.nvim",
     dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
