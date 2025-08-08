@@ -4,8 +4,9 @@ return {
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
-    lazy = false,
     version = false, -- NOTE:  Establezca esto si siempre desea realizar el último cambio
+    ---@module 'avante'
+    ---@type avante.Config
     opts = {
       -- NOTE:  Agregue cualquier opción aquí
       provider = "copilot",

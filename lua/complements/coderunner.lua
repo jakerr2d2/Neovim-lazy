@@ -50,3 +50,22 @@ require("code_runner").setup({
     },
   },
 })
+
+-- NOTE:  Función personalizada para apps interactivas
+local function run_interactive_java()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local java_term = Terminal:new({
+    cmd = "mvn compile exec:java",
+    direction = "horizontal",
+    size = 15,
+    close_on_exit = false,
+    on_open = function(term)
+      vim.cmd("startinsert!")
+      -- Permitir salir del modo insertar con Esc
+      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+    end,
+  })
+  java_term:toggle()
+end
+
+--vim.keymap.set("n", "<leader>Tj", run_interactive_java, { desc = "Run Interactive Java" })

@@ -1,4 +1,6 @@
 local wk = require("which-key")
+local neoscroll = require("neoscroll")
+local modes = { "n", "v", "x" }
 
 -- NOTE: Add Translate Neovim
 --
@@ -26,7 +28,7 @@ wk.add({
 
 -- NOTE: IA code
 wk.add({
-  -- TODO: Codecompanion
+  -- NOTE: Codecompanion
   --[[
   { "<leader>i", group = "ia", mode = { "n", "v" }, icon = "󱚢 " },
   { "<leader>ia", "<cmd>CodeCompanion<cr>", desc = " Open Assistant", mode = "n", icon = ic },
@@ -39,7 +41,7 @@ wk.add({
   { "<leader>it", "<cmd>CodeCompanionChat Toggle<cr>", desc = " Toggle Assistant", mode = "v", icon = "󰨙 " },
   ]]
 
-  -- TODO: Avante
+  -- NOTE: Avante
   { "<leader>j", group = "ia", mode = "n", icon = "󰭆 " },
   { "<leader>ja", "<cmd>AvanteAsk<cr>", desc = " Avante - Ask", mode = "n", icon = "󰺴 " },
   { "<leader>jb", "<cmd>AvanteBuild<cr>", desc = " Avante - Build", mode = "n", icon = "󰈠 " },
@@ -54,11 +56,11 @@ wk.add({
 
 -- NOTE: Buffers and Tabs
 wk.add({
-  -- TODO: Cybuffer
+  -- NOTE: Cybuffer
   --{ "<leader>j", "<cmd>CybuNext<cr>", desc = "Next Focus", mode = "n" },
   --{ "<leader>K", "<cmd>CybuLastusedPrev<cr>", desc = "Prev Focus", mode = "n" },
 
-  -- TODO:  Add tabs
+  -- NOTE:  Add tabs
   { "<leader><tab>p", "<cmd>BufferLinePick<cr>", desc = "Pick Tab" },
   { "<leader><tab>q", "<cmd>BufferLinePickClose<cr>", desc = "Pick Close Tab" },
   { "<leader><tab>k", "<cmd>BufferLineCycleNext<cr>", desc = "Next Tab" },
@@ -82,21 +84,24 @@ wk.add({
 
 -- NOTE: GIT
 wk.add({
-  -- TODO: Add neogit
+  -- NOTE: Add neogit
   { "<leader>gN", "<cmd>Neogit cwd=%:p:h<cr>", desc = "Neogit (cwd) " },
   { "<leader>gn", "<cmd>Neogit<cr>", desc = "Neogit (root dir) " },
 })
 
 -- NOTE: Windows
 wk.add({
-  -- TODO: Add Maximize
+  -- NOTE: Add Maximize
   { "<leader>wz", "<cmd>WindowsMaximize<cr>", desc = "Maximize window" },
   { "<leader>wv", "<cmd>WindowsMaximizeVertically<cr>", desc = "Maximize window vertically" },
   { "<leader>wh", "<cmd>WindowsMaximizeHorizontally<cr>", desc = "maximize window horizontally" },
   { "<leader>we", "<cmd>WindowsEqualize<cr>", desc = "Equalize windows" },
 
-  -- TODO: Add Organizate Windows
+  -- NOTE: Add Organizate Windows
   { "<leader>wo", "<cmd>WinShift<cr>", desc = "Organizate window" },
+
+  -- NOTE: Add Arena
+  { "<leader>i", "<cmd>ArenaToggle<cr>", desc = "Arena Open" },
 })
 
 -- NOTE: LiveServer
@@ -111,16 +116,16 @@ wk.add({
 -- NOTE: Extra features
 wk.add({
 
-  -- TODO: We added Ray although it is better manually.
+  -- NOTE: We added Ray although it is better manually.
   { "<leader>ct", "<cmd>'<,'>Ray<cr>", desc = "Ray snap", mode = "v" },
 
-  -- TODO: Add Navbuddy
+  -- NOTE: Add Navbuddy
   { "<leader>cN", "<cmd>Navbuddy<cr>", desc = "Navegar en el codigo" },
 
-  -- TODO: refactor
+  -- NOTE: refactor
   { "<leader>r", group = "refactor", mode = "n", icon = "󰳽" },
 
-  -- TODO: Multicursors
+  -- NOTE: Multicursors
   { "<leader>m", "<cmd>MCstart<cr>", desc = "Multicursors", mode = { "v", "n" }, icon = "󱄧" },
 })
 
@@ -139,7 +144,7 @@ wk.add({
 wk.add({
   { "<leader>y", group = "UFO deploys", mode = "n", icon = "👾" },
 
-  -- TODO: Open folds
+  -- NOTE: Open folds
   {
     "<leader>yo",
     function()
@@ -149,7 +154,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: Close folds
+  -- NOTE: Close folds
   {
     "<leader>yc",
     function()
@@ -159,7 +164,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: Open Folds kinds
+  -- NOTE: Open Folds kinds
   {
     "<leader>ye",
     function()
@@ -169,7 +174,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: Close Folds with
+  -- NOTE: Close Folds with
   {
     "<leader>yw",
     function()
@@ -179,7 +184,7 @@ wk.add({
     mode = "n",
   },
 
-  -- TODO: See preview
+  -- NOTE: See preview
   {
     "<leader>yk",
     function()
@@ -264,4 +269,93 @@ wk.add({
   { "<leader>fw", "<cmd>Telescope file_browser<cr>", desc = "File Browser" },
   -- NOTE: Add File Browser
   { "<leader>fo", "<cmd>Telescope smart_open<cr>", desc = "Smart Open" },
+})
+
+-- NOTE: Add Neoscroll
+wk.add({
+  {
+    "u",
+    function()
+      neoscroll.ctrl_u({ duration = 250 })
+    end,
+    mode = modes,
+  },
+  {
+    "d",
+    function()
+      neoscroll.ctrl_d({ duration = 250 })
+    end,
+    mode = modes,
+  },
+  {
+    "<C-b>",
+    function()
+      neoscroll.ctrl_b({ duration = 450 })
+    end,
+    mode = modes,
+  },
+  {
+    "<C-f>",
+    function()
+      neoscroll.ctrl_f({ duration = 450 })
+    end,
+    mode = modes,
+  },
+  {
+    "<C-y>",
+    function()
+      neoscroll.scroll(-0.1, { move_cursor = false, duration = 100 })
+    end,
+    mode = modes,
+  },
+  {
+    "<C-e>",
+    function()
+      neoscroll.scroll(0.1, { move_cursor = false, duration = 100 })
+    end,
+    mode = modes,
+  },
+  {
+    "zt",
+    function()
+      neoscroll.zt({ half_win_duration = 250 })
+    end,
+    mode = modes,
+  },
+  {
+    "zz",
+    function()
+      neoscroll.zz({ half_win_duration = 250 })
+    end,
+    mode = modes,
+  },
+  {
+    "zb",
+    function()
+      neoscroll.zb({ half_win_duration = 250 })
+    end,
+    mode = modes,
+  },
+})
+
+-- NOTE: Add Template
+wk.add({
+  -- NOTE: Handling CSV files
+  { "<leader>k", group = "Templates", mode = "n", icon = "" },
+
+  -- NOTE: Add Template
+  {
+    "<leader>kt",
+    function()
+      vim.fn.feedkeys(":Template ")
+    end,
+    mode = "n",
+    desc = "Template cmd",
+  },
+  -- NOTE: Telescope creat and aplicate template
+  { "<leader>kc", "<cmd>Telescope find_template name=templatename<cr>", desc = "Create Template" },
+  -- NOTE: Add File Browser
+  { "<leader>ki", "<cmd>Telescope find_template type=insert<cr>", desc = "Insert Template" },
+  -- NOTE: Add File Browser
+  { "<leader>kz", "<cmd>Telescope find_template type=insert filter_ft=false<cr>", desc = "View Templates" },
 })

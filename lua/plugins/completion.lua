@@ -4,10 +4,8 @@ return {
   opts = function(_, opts)
     local luasnip = require("luasnip")
 
-    -- NOTE: Asegúrate de extender django-html después de cargar los snippets
     require("luasnip.loaders.from_vscode").lazy_load()
 
-    -- NOTE: 👇 Aquí está la extensión importante
     luasnip.filetype_extend("htmldjango", { "html" })
     luasnip.filetype_extend("django-html", { "html" })
 
@@ -17,4 +15,17 @@ return {
 
     return opts
   end,
+
+  -- NOTE: Add Template
+  {
+    "glepnir/template.nvim",
+    cmd = { "Template", "TemProject" },
+    config = function()
+      require("template").setup({
+        temp_dir = "~/.config/nvim/templates/",
+        author = "bushido",
+        email = "bushido@pm.me",
+      })
+    end,
+  },
 }

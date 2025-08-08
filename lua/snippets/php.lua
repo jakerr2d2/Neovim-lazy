@@ -66,15 +66,18 @@ return {
     t({ "", "" }),
     t("?>"),
   }),
-  --NOTE: print_r
+
+  -- NOTE: print_r
   s("print_r", {
     t("print_r("),
     i(1),
     t(");"),
   }),
+
+  -- NOTE: print
   s("print", {
-    t("print("),
+    t("print "),
     i(1),
-    t(");"),
+    t(";"),
   }),
 }
