@@ -39,7 +39,7 @@ require("code_runner").setup({
     init = nil,
   },
   filetype = {
-    python = "python3 %",
+    python = "python3 $filePath",
     cpp = "g++ % -o %< && ./%<",
     c = "gcc % -o %< && ./%<",
     go = "go run %",

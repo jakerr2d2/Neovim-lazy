@@ -1,6 +1,7 @@
 return {
 
   -- NOTE: Agregamos avante.nvim a la lista de complementos
+  --[[
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
@@ -13,7 +14,8 @@ return {
 
       providers = {
         copilot = {
-          model = "claude-3.5-sonnet",
+          --model = "claude-3.5-sonnet",
+          model = "claude-sonnet-4-20250514",
         },
         gemini = {
           -- @see https://ai.google.dev/gemini-api/docs/models/gemini
@@ -106,7 +108,7 @@ return {
         ft = { "markdown", "Avante" },
       },
     },
-  },
+  },]]
 
   -- NOTE: Agregamos iron.nvim a la lista de complementos
   {
@@ -127,6 +129,7 @@ return {
   },
 
   -- NOTE: Agregamos Codeium para Neovim
+  --[[
   {
     "Exafunction/codeium.vim",
     config = function()
@@ -144,7 +147,7 @@ return {
         return vim.fn["codeium#Clear"]()
       end, { expr = true, silent = true })
     end,
-  },
+  },]]
 
   -- NOTE: Agregamos codecompanion.nvim a la lista de complementos
   --[[

@@ -42,6 +42,7 @@ wk.add({
   ]]
 
   -- NOTE: Avante
+  --[[
   { "<leader>j", group = "ia", mode = "n", icon = "󰭆 " },
   { "<leader>ja", "<cmd>AvanteAsk<cr>", desc = " Avante - Ask", mode = "n", icon = "󰺴 " },
   { "<leader>jb", "<cmd>AvanteBuild<cr>", desc = " Avante - Build", mode = "n", icon = "󰈠 " },
@@ -52,34 +53,66 @@ wk.add({
   { "<leader>jr", "<cmd>AvanteRefresh<cr>", desc = " Avante - Refresh", mode = "n", icon = " " },
   { "<leader>jt", "<cmd>AvanteToggle<cr>", desc = " Avante - Toggle", mode = "n", icon = "󰨙 " },
   { "<leader>jl", "<cmd>AvanteClear<cr>", desc = " Avante - Clear", mode = "n", icon = "󰃢 " },
+  ]]
 })
 
 -- NOTE: Buffers and Tabs
 wk.add({
-  -- NOTE: Cybuffer
-  --{ "<leader>j", "<cmd>CybuNext<cr>", desc = "Next Focus", mode = "n" },
-  --{ "<leader>K", "<cmd>CybuLastusedPrev<cr>", desc = "Prev Focus", mode = "n" },
+  -- NOTE: See tabs
+  { "<leader><tab>n", "<cmd>Bufferin<cr>", desc = "See Tabs", mode = "n" },
 
   -- NOTE:  Add tabs
-  { "<leader><tab>p", "<cmd>BufferLinePick<cr>", desc = "Pick Tab" },
-  { "<leader><tab>q", "<cmd>BufferLinePickClose<cr>", desc = "Pick Close Tab" },
-  { "<leader><tab>k", "<cmd>BufferLineCycleNext<cr>", desc = "Next Tab" },
-  { "<leader><tab>j", "<cmd>BufferLineCyclePrev<cr>", desc = "Previous Tab" },
-  { "<leader><tab>l", "<cmd>BufferLineMoveNext<cr>", desc = "Move Next Tab" },
-  { "<leader><tab>h", "<cmd>BufferLineMovePrev<cr>", desc = "Move Prev Tab" },
+  { "<leader><tab>p", "<cmd>BufferPick<cr>", desc = "Pick Tab" },
+  { "<leader><tab>q", "<cmd>BufferPickDelete<cr>", desc = "Pick Close Tab" },
+  { "<leader><tab>k", "<cmd>BufferNext<cr>", desc = "Next Tab" },
+  { "<leader><tab>j", "<cmd>BufferPrevious<cr>", desc = "Previous Tab" },
+  { "<leader><tab>l", "<cmd>BufferMoveNext<cr>", desc = "Move Next Tab" },
+  { "<leader><tab>h", "<cmd>BufferMovePrevious<cr>", desc = "Move Prev Tab" },
+  { "<leader><tab>w", "<cmd>BufferWipeout<cr>", desc = "Close Other Tabs" },
+  { "<leader><tab>i", "<cmd>BufferPin<cr>", desc = "Pin/unpin buffer" },
+  { "<leader><tab>d", "<cmd>BufferClose<cr>", desc = "Close Tab" },
   { "<leader><tab>o", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Tabs" },
+
+  -- NOTE: Close tabs
+  { "<leader><tab>c", group = "Close Tab", mode = "n", icon = " 󰭌 " },
+  { "<leader><tab>cc", "<cmd>BufferCloseAllButCurrent<cr>", desc = "Close all current Tab" },
+  { "<leader><tab>cp", "<cmd>BufferCloseAllButPinned<cr>", desc = "Close all pinned Tab" },
+  { "<leader><tab>ci", "<cmd>BufferCloseAllButCurrentOrPinned<cr>", desc = "Close current or pinned Tab" },
+  { "<leader><tab>cl", "<cmd>BufferCloseBuffersLeft<cr>", desc = "Close left Tab" },
+  { "<leader><tab>cr", "<cmd>BufferCloseBuffersRight<cr>", desc = "Close Right Tab" },
+
+  -- NOTE: Order tabs
+  { "<leader><tab>b", group = "Order Tab", mode = "n", icon = " 󰠶 " },
+  { "<leader><tab>bb", "<cmd>BufferOrderByBufferNumber<cr>", desc = "Order Tabs by numbers" },
+  { "<leader><tab>bn", "<cmd>BufferOrderByName<cr>", desc = "Order Tabs by Name" },
+  { "<leader><tab>bd", "<cmd>BufferOrderByDirectory<cr>", desc = "Order Tab by Directory" },
+  { "<leader><tab>bl", "<cmd>BufferOrderByLanguage<cr>", desc = "Order Tab by lenguage" },
+  { "<leader><tab>bw", "<cmd>BufferOrderByWindowNumber<cr>", desc = "Order Tab by Window numbers" },
+
+  -- NOTE: Order tabs
+  { "<leader><tab>1", "<cmd>BufferGoto 1<cr>", desc = "Go to tab 1" },
+  { "<leader><tab>2", "<cmd>BufferGoto 2<cr>", desc = "Go to tab 2" },
+  { "<leader><tab>3", "<cmd>BufferGoto 3<cr>", desc = "Go to tab 3" },
+  { "<leader><tab>4", "<cmd>BufferGoto 4<cr>", desc = "Go to tab 4" },
+  { "<leader><tab>5", "<cmd>BufferGoto 5<cr>", desc = "Go to tab 5" },
+  { "<leader><tab>6", "<cmd>BufferGoto 6<cr>", desc = "Go to tab 6" },
+  { "<leader><tab>7", "<cmd>BufferGoto 7<cr>", desc = "Go to tab 7" },
+  { "<leader><tab>8", "<cmd>BufferGoto 8<cr>", desc = "Go to tab 8" },
+  { "<leader><tab>9", "<cmd>BufferGoto 9<cr>", desc = "Go to tab 9" },
+  { "<leader><tab>0", "<cmd>BufferLast<cr>", desc = "Go to last tab" },
 })
 
 -- NOTE: Add Code Runner
 wk.add({
   -- NOTE: Add Code Runner
-  { "<leader>tU", "<cmd>RunCode<cr>", noremap = true, silent = false },
-  { "<leader>tu", "<cmd>RunFile<cr>", noremap = true, silent = false },
-  { "<leader>tv", "<cmd>RunFile tab<cr>", noremap = true, silent = false },
-  { "<leader>tV", "<cmd>RunProject<cr>", noremap = true, silent = false },
-  { "<leader>tw", "<cmd>RunClose<cr>", noremap = true, silent = false },
-  { "<leader>tW", "<cmd>CRFiletype<cr>", noremap = true, silent = false },
-  { "<leader>tx", "<cmd>CRProjects<cr>", noremap = true, silent = false },
+  { "<leader>R", group = "Run code", mode = "n", icon = "󰑮" },
+  { "<leader>RU", "<cmd>RunCode<cr>", noremap = true, silent = false },
+  { "<leader>Ru", "<cmd>RunFile<cr>", noremap = true, silent = false },
+  { "<leader>Rv", "<cmd>RunFile tab<cr>", noremap = true, silent = false },
+  { "<leader>RV", "<cmd>RunProject<cr>", noremap = true, silent = false },
+  { "<leader>Rw", "<cmd>RunClose<cr>", noremap = true, silent = false },
+  { "<leader>RW", "<cmd>CRFiletype<cr>", noremap = true, silent = false },
+  { "<leader>Rx", "<cmd>CRProjects<cr>", noremap = true, silent = false },
 })
 
 -- NOTE: GIT
@@ -358,4 +391,18 @@ wk.add({
   { "<leader>ki", "<cmd>Telescope find_template type=insert<cr>", desc = "Insert Template" },
   -- NOTE: Add File Browser
   { "<leader>kz", "<cmd>Telescope find_template type=insert filter_ft=false<cr>", desc = "View Templates" },
+})
+
+-- NOTE: Add Sintaxis
+wk.add({
+  -- NOTE: Telescope creat and aplicate template
+  { "<leader>cy", "<cmd>Navbuddy<cr>", desc = "Navigate code" },
+})
+
+-- NOTE: Add Databases
+wk.add({
+  -- NOTE: Handling CSV
+  { "<leader>B", group = "Databases", mode = "n", icon = "󰥝" },
+  { "<leader>Bo", "<cmd>Dbee open<cr>", desc = "Dbee open" },
+  { "<leader>Bc", "<cmd>Dbee close<cr>", desc = "Dbee open" },
 })

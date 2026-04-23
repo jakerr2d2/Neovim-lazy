@@ -1,4 +1,5 @@
 return {
+  dependencies = "vim-dadbod",
   -- NOTE: Add dropbar
   {
     "Bekaboo/dropbar.nvim",
