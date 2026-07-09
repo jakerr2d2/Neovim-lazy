@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local map = vim.keymap.set
+
 -- NOTE: Add quit and save all
 map("n", "<leader>qr", "<cmd>wq<cr>", { desc = "Quit and save all" })
 

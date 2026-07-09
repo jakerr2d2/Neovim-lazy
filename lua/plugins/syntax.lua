@@ -37,4 +37,10 @@ return {
       require("hlargs").setup()
     end,
   },
+
+  -- NOTE: Add move.nvim to move lines and blocks of code easily
+  {
+    "fedepujol/move.nvim",
+    opts = {},
+  },
 }

@@ -406,3 +406,57 @@ wk.add({
   { "<leader>Bo", "<cmd>Dbee open<cr>", desc = "Dbee open" },
   { "<leader>Bc", "<cmd>Dbee close<cr>", desc = "Dbee open" },
 })
+
+-- NOTE: Move Lines
+wk.add({
+  -- HACK: 1. MODO INSERT (mode = "i") - Usando Ctrl + Flechas
+  {
+    mode = { "i" },
+    { "<C-Down>", "<esc><cmd>m .+1<cr>==gi", desc = "Mover línea abajo" },
+    { "<C-Up>", "<esc><cmd>m .-2<cr>==gi", desc = "Mover línea arriba" },
+  },
+
+  -- PERF: 2. MODO NORMAL (mode = "n") - Usando o + j / o + k
+  {
+    mode = { "n" },
+    { "<C-Down>", "<cmd>m .+1<cr>==", desc = "Mover linea abajo" },
+    { "<C-Up>", "<cmd>m .-2<cr>==", desc = "Mover linea arriba" },
+    { "ok", ":MoveHChar(1)<CR>", desc = "Mover caracter derecha" },
+    { "oj", ":MoveHChar(-1)<CR>", desc = "Mover caracter izquierda" },
+    { "<C-Right>", ":MoveWord(1)<CR>", desc = "Mover palabra derecha" },
+    { "<C-Left>", ":MoveWord(-1)<CR>", desc = "Mover palabra izquierda" },
+    {
+      "<C-k>",
+      function()
+        local linea = vim.fn.input("Mover a la línea: ")
+        if linea ~= "" and tonumber(linea) then
+          vim.cmd("move " .. linea)
+          vim.cmd("normal! ==") -- Autoindenta la línea al moverla
+        end
+      end,
+      desc = "Mover línea a número específico",
+    },
+  },
+
+  -- TODO: 3. MODO VISUAL (mode = "v") - Usando Ctrl + Flechas
+  {
+    mode = { "v" },
+    { "<C-Down>", ":m '>+1<cr>gv=gv", desc = "Mover bloque abajo" },
+    { "<C-Up>", ":m '<-2<cr>gv=gv", desc = "Mover bloque arriba" },
+    { "<C-Right>", ":MoveHBlock(1)<CR>", desc = "Mover bloque a la derecha" },
+    { "<C-Left>", ":MoveHBlock(-1)<CR>", desc = "Mover bloque a la  izquierda" },
+    {
+      "<C-j>",
+      function() -- Salimos temporalmente del modo visual para asegurar que las marcas '< y '> se guarden
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<ESC>", true, false, true), "x", false)
+
+        local linea = vim.fn.input("Mover bloque a la línea: ")
+        if linea ~= "" and tonumber(linea) then
+          vim.cmd("'<,'>move " .. linea)
+          vim.cmd("normal! gv=") -- Re-selecciona y autoindenta el bloque
+        end
+      end,
+      desc = "Mover seleccion a numero específico",
+    },
+  },
+})
