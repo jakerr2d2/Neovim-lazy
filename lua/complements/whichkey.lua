@@ -460,3 +460,10 @@ wk.add({
     },
   },
 })
+
+-- NOTE: Test APPI
+wk.add({
+
+  -- TODO: Add LiveServer
+  { "<leader>tA", "<cmd>Atac<cr>", mode = "n", icon = "", desc = "Postman" },
+})
