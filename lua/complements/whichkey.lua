@@ -105,14 +105,14 @@ wk.add({
 -- NOTE: Add Code Runner
 wk.add({
   -- NOTE: Add Code Runner
-  { "<leader>R", group = "Run code", mode = "n", icon = "󰑮" },
-  { "<leader>RU", "<cmd>RunCode<cr>", noremap = true, silent = false },
-  { "<leader>Ru", "<cmd>RunFile<cr>", noremap = true, silent = false },
-  { "<leader>Rv", "<cmd>RunFile tab<cr>", noremap = true, silent = false },
-  { "<leader>RV", "<cmd>RunProject<cr>", noremap = true, silent = false },
-  { "<leader>Rw", "<cmd>RunClose<cr>", noremap = true, silent = false },
-  { "<leader>RW", "<cmd>CRFiletype<cr>", noremap = true, silent = false },
-  { "<leader>Rx", "<cmd>CRProjects<cr>", noremap = true, silent = false },
+  { "<leader>Ro", group = "Run code", mode = "n", icon = "󰑮" },
+  { "<leader>RoU", "<cmd>RunCode<cr>", noremap = true, silent = false },
+  { "<leader>Rou", "<cmd>RunFile<cr>", noremap = true, silent = false },
+  { "<leader>Rov", "<cmd>RunFile tab<cr>", noremap = true, silent = false },
+  { "<leader>RoV", "<cmd>RunProject<cr>", noremap = true, silent = false },
+  { "<leader>Row", "<cmd>RunClose<cr>", noremap = true, silent = false },
+  { "<leader>RoW", "<cmd>CRFiletype<cr>", noremap = true, silent = false },
+  { "<leader>Rox", "<cmd>CRProjects<cr>", noremap = true, silent = false },
 })
 
 -- NOTE: GIT
@@ -464,6 +464,6 @@ wk.add({
 -- NOTE: Test APPI
 wk.add({
 
-  -- TODO: Add LiveServer
-  { "<leader>tA", "<cmd>Atac<cr>", mode = "n", icon = "", desc = "Postman" },
+  -- TODO: Add Atac
+  { "<leader>Ra", "<cmd>Atac<cr>", mode = "n", icon = "", desc = "Postman" },
 })
