@@ -2,11 +2,13 @@ return {
   -- NOTE: add decisive (CSV)
   {
     "emmanueltouzery/decisive.nvim",
+    event = "VeryLazy",
   },
 
   -- NOTE: add csvlens
   {
     "theKnightsOfRohan/csvlens.nvim",
+    event = "VeryLazy",
     dependencies = { "akinsho/toggleterm.nvim" },
     config = true,
     opts = {},
@@ -15,11 +17,13 @@ return {
   -- NOTE: Uppercase in SQL
   {
     "jsborjesson/vim-uppercase-sql",
+    event = "VeryLazy",
   },
 
   -- NOTE: Translate de Neovim
   {
     "uga-rosa/translate.nvim",
+    event = "VeryLazy",
     config = function()
       require("translate").setup({
         default = {
@@ -32,6 +36,7 @@ return {
   -- NOTE: undo-glow.lua
   {
     "y3owk1n/undo-glow.nvim",
+    event = "VeryLazy",
     version = "*", -- remove this if you want to use the `main` branch
     opts = {
       animation = {
@@ -44,4 +49,6 @@ return {
       },
     },
   },
+
+  -- WARNING: Agregamos el event VeryLazy para que no se cargue al inicio y solo cuando se necesite
 }

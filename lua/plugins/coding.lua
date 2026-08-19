@@ -2,6 +2,7 @@ return {
   -- NOTE: add nvim-navbuddy
   {
     "SmiteshP/nvim-navbuddy",
+    event = "VeryLazy",
     dependencies = {
       "SmiteshP/nvim-navic",
       "MunifTanjim/nui.nvim",
@@ -23,6 +24,7 @@ return {
   -- NOTE: add php easy
   {
     "ta-tikoma/php.easy.nvim",
+    event = "VeryLazy",
     dependencies = { "L3MON4D3/LuaSnip" },
     opts = {
       onAppend = { engine = "LuaSnip" },

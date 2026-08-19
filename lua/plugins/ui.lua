@@ -8,12 +8,14 @@ return {
   -- NOTE: Zen mode
   {
     "folke/zen-mode.nvim",
+    event = "VeryLazy",
     opts = {},
   },
 
   -- NOTE: True-zen mode
   {
     "Pocco81/true-zen.nvim",
+    event = "VeryLazy",
     config = function()
       require("true-zen").setup({
         integrations = {
@@ -38,6 +40,7 @@ return {
   -- NOTE: Smooth cursor
   {
     "gen740/SmoothCursor.nvim",
+    event = "VeryLazy",
     config = function()
       require("smoothcursor").setup({ cursor = "󰀫" })
       -- ... resto de configuración
@@ -47,6 +50,7 @@ return {
   -- NOTE: Reactive plugin
   {
     "rasulomaroff/reactive.nvim",
+    event = "VeryLazy",
     config = function()
       require("reactive").setup({
         load = { "catppuccin-mocha-cursor", "catppuccin-mocha-cursorline" },
@@ -57,6 +61,7 @@ return {
   -- NOTE: Add bufferline
   {
     "akinsho/bufferline.nvim",
+    event = "VeryLazy",
     enabled = false,
   },
 
@@ -72,14 +77,30 @@ return {
     end,
     opts = {
       -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
+      animation = true,
+      auto_hide = true,
+      tabpages = true,
+      preset = "slanted",
+      -- Set the filetypes which barbar will offset itself for
+      sidebar_filetypes = {
+        -- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
+        NvimTree = true,
+        -- Or, specify the text used for the offset:
+        undotree = {
+          text = "undotree",
+          align = "center", -- *optionally* specify an alignment (either 'left', 'center', or 'right')
+        },
+        -- Or, specify the event which the sidebar executes when leaving:
+        ["neo-tree"] = { event = "BufWipeout" },
+        -- Or, specify all three
+        Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
+      },
       -- insert_at_start = true,
       -- …etc.
     },
     version = "^1.0.0", -- optional: only update when a new 1.x version is released
   },
 
-  --
   -- NOTE: Add bufferin
   {
     "wasabeef/bufferin.nvim",
@@ -94,4 +115,6 @@ return {
       -- 'akinsho/bufferline.nvim',    -- Alternative buffer line
     },
   },
+
+  -- WARNING: Se ha agregado el event "VeryLazy" para que se cargue el plugin de bufferline solo cuando sea necesario, mejorando el rendimiento de Neovim.
 }

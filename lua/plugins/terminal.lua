@@ -3,6 +3,7 @@ return {
   -- NOTE: add terminal
   {
     "akinsho/toggleterm.nvim",
+    event = "VeryLazy",
     version = "*",
     config = function()
       require("toggleterm").setup({
@@ -30,6 +31,7 @@ return {
   -- NOTE: add ranger
   {
     "kelly-lin/ranger.nvim",
+    event = "VeryLazy",
     config = function()
       require("ranger-nvim").setup({ replace_netrw = true })
       --[[vim.api.nvim_set_keymap("n", "<leader>fa", "", {
@@ -41,4 +43,6 @@ return {
       --
     end,
   },
+
+  -- WARNING: se agrega el event= "VeryLazy" para que se cargue el plugin de manera diferida y no afecte el tiempo de inicio de Neovim.
 }

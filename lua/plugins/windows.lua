@@ -3,6 +3,7 @@ return {
   {
     "ghillb/cybu.nvim",
     branch = "main",
+    event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
     config = function()
       local ok, cybu = pcall(require, "cybu")
@@ -17,6 +18,7 @@ return {
   {
     "danielfalk/smart-open.nvim",
     branch = "0.2.x",
+    event = "VeryLazy",
     config = function()
       require("telescope").load_extension("smart_open")
     end,
@@ -30,6 +32,7 @@ return {
   -- NOTE: Add neoscroll este sirve para recorrer las ventana de manera mas fluida
   {
     "karb94/neoscroll.nvim",
+    event = "VeryLazy",
     config = function()
       --require("neoscroll").setup({})
     end,
@@ -38,6 +41,7 @@ return {
   -- NOTE: Add nvim-window este siver para agregar a cada ventana una letra para trasladarse a ella
   {
     "yorickpeterse/nvim-window",
+    event = "VeryLazy",
     keys = {
       { "<leader>wa", "<cmd>lua require('nvim-window').pick()<cr>", desc = "nvim-window: Jump to window" },
     },
@@ -47,6 +51,7 @@ return {
   -- NOTE: Add windows este sirve para maximizar una ventana
   {
     "anuvyklack/windows.nvim",
+    event = "VeryLazy",
     dependencies = {
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim",
@@ -63,11 +68,11 @@ return {
   {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
-    event = { "WinNew" },
+    event = { "WinNew", "VeryLazy" },
   },
 
   -- NOTE: Add winshift organizate windows
-  { "sindrets/winshift.nvim" },
+  { "sindrets/winshift.nvim", event = "VeryLazy" },
 
   -- NOTE: Add arena
   {
@@ -76,4 +81,6 @@ return {
     -- Calls `.setup()` automatically
     config = true,
   },
+
+  -- WARNING: Este grupo de plugins ya se agregado VeryLazy.
 }

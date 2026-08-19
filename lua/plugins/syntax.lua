@@ -3,6 +3,7 @@ return {
   -- NOTE: Add dropbar
   {
     "Bekaboo/dropbar.nvim",
+    event = "VeryLazy",
     -- optional, but required for fuzzy finder support
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
@@ -19,11 +20,13 @@ return {
   -- NOTE: Improve Treesitter highlighting
   {
     "m-demare/hlargs.nvim",
+    event = "VeryLazy",
   },
 
   -- NOTE: Add nvim_context_vt
   {
     "andersevenrud/nvim_context_vt",
+    event = "VeryLazy",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("nvim_context_vt").setup({})
@@ -33,6 +36,7 @@ return {
   -- NOTE: Add Hlargs to highlight arguments better in several languages.
   {
     "m-demare/hlargs.nvim",
+    event = "VeryLazy",
     config = function()
       require("hlargs").setup()
     end,
@@ -41,6 +45,9 @@ return {
   -- NOTE: Add move.nvim to move lines and blocks of code easily
   {
     "fedepujol/move.nvim",
+    event = "VeryLazy",
     opts = {},
   },
+
+  -- WARNING: Se agrega el event= "VeryLazy" para que se cargue el plugin de manera diferida y no afecte el tiempo de inicio de Neovim.
 }

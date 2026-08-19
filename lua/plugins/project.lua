@@ -2,6 +2,7 @@ return {
   -- NOTE: Add project
   {
     "ahmedkhalf/project.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
     opts = {
       manual_mode = false,

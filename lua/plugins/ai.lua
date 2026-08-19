@@ -113,6 +113,7 @@ return {
   -- NOTE: Agregamos iron.nvim a la lista de complementos
   {
     "Vigemus/iron.nvim",
+    event = "VeryLazy",
     config = function()
       require("iron.core").setup({
         repl_definition = {
